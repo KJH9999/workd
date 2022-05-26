@@ -1,0 +1,82 @@
+header {
+	width: 100%;
+	position: sticky;
+	padding : 20px 60px;
+	z-index : 1000;
+}
+
+header > div {
+	display: flex;
+	padding-bottom: 10px;
+}
+
+header .logo-wrapper {
+	width: 250px;
+	flex: 0 0 auto;
+	cursor : pointer;
+}
+
+header .logo-wrapper > .sns-wrapper {
+	display : none;
+}
+
+header .logo-wrapper > img {
+	width: 100%;
+}
+
+.menu {
+	flex : 1 0 auto;
+	display : flex;
+	justify-content : flex-end;
+}
+
+header .dropdown-wrapper {
+	display: flex;
+	align-items : center;
+}
+
+header .dropdown {
+	position : relative;
+	font-size: 18px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+header .dropdown > .text {
+	width: 100%;
+	padding: 15px 50px;
+	position: relative;
+	display: inline-block;
+	cursor : pointer;
+}
+
+header .dropdown > .list {
+	top: 55px;
+	left: 0;
+	right: 0;
+	font-size: 18px;
+	font-weight: 700;
+	position: absolute;
+	text-align: center;
+	display : none;
+	border-radius: 5px;
+	color : white;
+	background-color : black;
+}
+
+header .dropdown:hover > .list {
+	display: block;
+}
+
+header .list > li {
+	padding : 10px 0px;
+	cursor : pointer;
+}
+
+header .list>li:first-child {
+	padding-top: 20px;
+}
+
+header .list>li:last-child {
+	padding-bottom: 20px;
+}
+}

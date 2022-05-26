@@ -37,7 +37,6 @@
 		</article>
 	</section>
 	<section class="content-wrapper">
-
 		<article>
 			<div class="title">
 				<span>Event</span>
@@ -47,6 +46,78 @@
 					</a>
 					</span>
 				</div>
+			</div>
+			<div class="event-wrapper">
+				<a href="#event1">
+					<div class="event-wrap">
+						<div class="event-content">
+							<div class="event-date">
+								<span>05/25(목) ~ 12/31(토)</span>
+							</div>
+							<div class="event-title">
+								<span>신나게 운동할래요!</span>
+							</div>
+							<div class="event-subTitle">
+								<span>회원님들만의 음악 플레이리스트를 틀어드려요!</span>
+							</div>
+							<div class="event-category">
+								<span>Music</span>
+							</div>
+						</div>
+						<div class="event-image">
+							<img
+								src="${pageContext.request.contextPath}/image/events/MusicStation.jpg" />
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="event-wrapper">
+				<a href="#event2">
+					<div class="event-wrap">
+						<div class="event-content">
+							<div class="event-date">
+								<span>05/03(화) ~ 12/31(토)</span>
+							</div>
+							<div class="event-title">
+								<span>야외에서<br/>운동 할래요!</span>
+							</div>
+							<div class="event-subTitle">
+								<span>지루한 실내운동말고 야외에서 운동해요.</span>
+							</div>
+							<div class="event-category">
+								<span>Exercise</span>
+							</div>
+						</div>
+						<div class="event-image">
+							<img
+								src="${pageContext.request.contextPath}/image/events/PlayGround.jpg" />
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="event-wrapper">
+				<a href="#event3">
+					<div class="event-wrap">
+						<div class="event-content">
+							<div class="event-date">
+								<span>04/13(수) ~ 10/03(월)</span>
+							</div>
+							<div class="event-title">
+								<span>식단 관리를 하고 싶어요!</span>
+							</div>
+							<div class="event-subTitle">
+								<span>식단 조절이 어려운 분들을 위해<br/>하나하나 맞춰드려요.</span>
+							</div>
+							<div class="event-category">
+								<span>Diet</span>
+							</div>
+						</div>
+						<div class="event-image">
+							<img
+								src="${pageContext.request.contextPath}/image/events/Food.jpg" />
+						</div>
+					</div>
+				</a>
 			</div>
 		</article>
 		<article>

@@ -10,9 +10,9 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 <link rel='stylesheet' type="text/css"
-	href="${pageContext.request.contextPath}/resources/styles/common/global.css" />
+	href="${pageContext.request.contextPath}/css/common/global.css" />
 <link rel='stylesheet' type="text/css"
-	href="${pageContext.request.contextPath}/resources/styles/pages/home.css" />
+	href="${pageContext.request.contextPath}/css/pages/home.css" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -21,17 +21,17 @@
 		<article class="carousel-inner">
 			<div class="carousel-item active">
 				<img class="d-block w-100"
-					src="${pageContext.request.contextPath}/resources/images/imageSlide/imageSlide1.webp"
+					src="${pageContext.request.contextPath}/image/imageSlide/imageSlide1.webp"
 					alt="First slide">
 			</div>
 			<div class="carousel-item">
 				<img class="d-block w-100"
-					src="${pageContext.request.contextPath}/resources/images/imageSlide/imageSlide2.webp"
+					src="${pageContext.request.contextPath}/image/imageSlide/imageSlide2.webp"
 					alt="Second slide">
 			</div>
 			<div class="carousel-item">
 				<img class="d-block w-100"
-					src="${pageContext.request.contextPath}/resources/images/imageSlide/imageSlide3.webp"
+					src="${pageContext.request.contextPath}/image/imageSlide/imageSlide3.webp"
 					alt="Third slide">
 			</div>
 		</article>
@@ -43,7 +43,7 @@
 				<span>Event</span>
 				<div class="detail">
 					<span> <a href="event"> 전체보기 <img
-							src="${pageContext.request.contextPath}/resources/images/icons/right-arrow.png">
+							src="${pageContext.request.contextPath}/image/icons/right-arrow.png">
 					</a>
 					</span>
 				</div>
@@ -54,7 +54,7 @@
 				<span>PT 강사</span>
 				<div class="detail">
 					<span><a href="ptTeacher">전체보기 <img
-							src="${pageContext.request.contextPath}/resources/images/icons/right-arrow.png"></a></span>
+							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
 				</div>
 			</div>
 		</article>
@@ -63,7 +63,7 @@
 				<span>Youtube 영상</span>
 				<div class="detail">
 					<span><a href="youtube"> 전체보기 <img
-							src="${pageContext.request.contextPath}/resources/images/icons/right-arrow.png"></a></span>
+							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
 
 				</div>
 			</div>
@@ -73,7 +73,7 @@
 				<span>Ranking</span>
 				<div class="detail">
 					<span><a href="ranking"> 전체보기<img
-							src="${pageContext.request.contextPath}/resources/images/icons/right-arrow.png"></a></span>
+							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
 
 				</div>
 			</div>
@@ -83,7 +83,7 @@
 				<span>Schedule</span>
 				<div class="detail">
 					<span><a href="schedule">전체보기 <img
-							src="${pageContext.request.contextPath}/resources/images/icons/right-arrow.png"></a></span>
+							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
 				</div>
 			</div>
 		</article>
@@ -92,7 +92,7 @@
 				<span>Map</span>
 				<div class="detail">
 					<span><a href="map">전체보기 <img
-							src="${pageContext.request.contextPath}/resources/images/icons/right-arrow.png"></a></span>
+							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
 				</div>
 			</div>
 			<div id="map"></div>
@@ -124,7 +124,7 @@
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cfcbf165593fa61e13e3cdf2e4252f2b&libraries=services"></script>
 	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/resources/scripts/pages/home.js">
+		src="${pageContext.request.contextPath}/js/pages/home.js">
 		
 	</script>
 </body>

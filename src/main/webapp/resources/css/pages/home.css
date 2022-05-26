@@ -1,5 +1,5 @@
 @font-face {
-	src : url("../../fonts/YouandiNewKrTitle-Bold.woff2");
+	src : url("../../font/YouandiNewKrTitle-Bold.woff2");
 	font-family : "YouandiNewKrHEB";
 }
 
@@ -12,6 +12,7 @@ section {
 }
 
 #ImageSlider {
+	min-width: 700px;
 	margin-bottom: 30px;
 }
 
@@ -28,30 +29,96 @@ section {
 	min-width: 600px;
 	min-height : 400px;
 	margin-bottom: 20px;
+	padding : 10px;
 }
 
-.content-wrapper .title {
+.content-wrapper > article > .title {
 	display : flex;
 	width : 100%;
-	padding : 10px;
+	margin-bottom: 50px;
 	line-height : 40px;
-	border-bottom: 1px solid gray;
+	padding-bottom: 10px;
 	justify-content : space-between;
+	border-bottom: 1px solid gray;
 }
 
-.content-wrapper .title > span {
+.content-wrapper > article > .title > span {
 	font-size : 30px;
 	font-weight: 700;
 	font-family	: 'YouandiNewKrHEB';
 }
 
-.content-wrapper .title .detail {
+.content-wrapper > article > .title .detail {
 	font-weight: bold;
 }
 
-.content-wrapper .title .detail img {
+.content-wrapper > article > .title .detail img {
 	position: relative;
 	top: -1px;
+}
+
+.event-wrapper {
+	display : flex;
+	flex : 0 0 auto;
+	justify-content : center;
+	margin-bottom: 50px;
+}
+
+.event-wrapper > a {
+	width: 100%;
+	display : block;
+}
+
+.event-wrap {
+	display : flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content : space-between;
+}
+
+.event-content {
+	margin-right : 20px;
+}
+
+.event-date {
+	margin-bottom: 10px;
+}
+
+.event-date > span {
+	font-size: 20px;
+	font-weight: 600;
+	color : #444;
+}
+
+.event-title {
+	margin-bottom: 14px;
+}
+
+.event-title > span {
+	font-size : 40px;
+	font-weight: 700;
+	weord-break: break-all;
+}
+
+.event-subTitle {
+	margin-bottom: 33px;
+}
+
+.event-subTitle > span {
+	color : #888;
+	font-size: 17px;
+	word-break: keep-all;
+}
+
+.event-category > span {
+	color : #444;
+	font-weight: 600;
+}
+
+
+.event-image img{
+	width: 300px;
+	margin-bottom: 10px;
 }
 
 #map {

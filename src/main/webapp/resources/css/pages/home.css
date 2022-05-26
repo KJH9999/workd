@@ -1,0 +1,61 @@
+@font-face {
+	src : url("../../fonts/YouandiNewKrTitle-Bold.woff2");
+	font-family : "YouandiNewKrHEB";
+}
+
+main {
+	padding : 0 100px;
+}
+
+section {
+	
+}
+
+#ImageSlider {
+	margin-bottom: 30px;
+}
+
+.carousel-item {
+	width : 100%;
+}
+
+.carousel-item > img {
+	height: 600px;
+	object-fit: cover;
+}
+
+.content-wrapper > article {
+	min-width: 600px;
+	min-height : 400px;
+	margin-bottom: 20px;
+}
+
+.content-wrapper .title {
+	display : flex;
+	width : 100%;
+	padding : 10px;
+	line-height : 40px;
+	border-bottom: 1px solid gray;
+	justify-content : space-between;
+}
+
+.content-wrapper .title > span {
+	font-size : 30px;
+	font-weight: 700;
+	font-family	: 'YouandiNewKrHEB';
+}
+
+.content-wrapper .title .detail {
+	font-weight: bold;
+}
+
+.content-wrapper .title .detail img {
+	position: relative;
+	top: -1px;
+}
+
+#map {
+	width: 400px;
+	height: 396px;
+	flex : 0 0 auto;
+}

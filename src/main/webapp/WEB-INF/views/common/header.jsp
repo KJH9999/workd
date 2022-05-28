@@ -5,9 +5,6 @@
 	<head>
 		<link rel='stylesheet' type="text/css" href="${pageContext.request.contextPath}/css/common/global.css"/>
 		<link rel='stylesheet' type="text/css" href="${pageContext.request.contextPath}/css/common/header.css"/>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header>

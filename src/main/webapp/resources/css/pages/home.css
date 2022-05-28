@@ -1,10 +1,6 @@
-@font-face {
-	src : url("../../font/YouandiNewKrTitle-Bold.woff2");
-	font-family : "YouandiNewKrHEB";
-}
-
 main {
-	padding : 0 100px;
+	min-width: 1000px;
+	padding: 0 100px;
 }
 
 section {
@@ -12,90 +8,88 @@ section {
 }
 
 #ImageSlider {
-	min-width: 700px;
 	margin-bottom: 30px;
 }
 
 .carousel-item {
-	width : 100%;
+	width: 100%;
 }
 
-.carousel-item > img {
+.carousel-item>img {
 	height: 600px;
 	object-fit: cover;
 }
 
-.content-wrapper > article {
-	min-width: 600px;
-	min-height : 400px;
+.content-wrapper>article {
+	min-height: 400px;
 	margin-bottom: 20px;
-	padding : 10px;
+	padding: 10px;
 }
 
-.content-wrapper > article > .title {
-	display : flex;
-	width : 100%;
+.content-wrapper>article>.title {
+	display: flex;
+	width: 100%;
 	margin-bottom: 50px;
-	line-height : 40px;
+	line-height: 40px;
 	padding-bottom: 10px;
-	justify-content : space-between;
+	justify-content: space-between;
 	border-bottom: 1px solid gray;
 }
 
-.content-wrapper > article > .title > span {
-	font-size : 30px;
+.content-wrapper>article>.title>span {
+	font-size: 30px;
 	font-weight: 700;
-	font-family	: 'YouandiNewKrHEB';
+	font-family: 'YouandiNewKrHEB';
 }
 
-.content-wrapper > article > .title .detail {
+.content-wrapper>article>.title .detail {
 	font-weight: bold;
 }
 
-.content-wrapper > article > .title .detail img {
+.content-wrapper>article>.title .detail img {
 	position: relative;
 	top: -1px;
 }
 
 .event-wrapper {
-	display : flex;
-	flex : 0 0 auto;
-	justify-content : center;
+	display: flex;
+	flex: 0 0 auto;
+	justify-content: center;
 	margin-bottom: 50px;
 }
 
-.event-wrapper > a {
+.event-wrapper>a {
 	width: 100%;
-	display : block;
+	display: block;
 }
 
 .event-wrap {
-	display : flex;
+	display: flex;
 	width: 100%;
 	flex-direction: row;
-	justify-content : space-between;
+	justify-content: space-between;
 }
 
 .event-content {
-	margin-right : 20px;
+	margin-right: 20px;
 }
 
 .event-date {
 	margin-bottom: 10px;
 }
 
-.event-date > span {
+.event-date>span {
 	font-size: 20px;
 	font-weight: 600;
-	color : #444;
+	color: #444;
 }
 
 .event-title {
 	margin-bottom: 14px;
 }
 
-.event-title > span {
-	font-size : 40px;
+.event-title>span {
+	font-size: 40px;
 	font-weight: 700;
 	weord-break: break-all;
 }
@@ -104,25 +98,67 @@ section {
 	margin-bottom: 33px;
 }
 
-.event-subTitle > span {
-	color : #888;
+.event-subTitle>span {
+	color: #888;
 	font-size: 17px;
 	word-break: keep-all;
 }
 
-.event-category > span {
-	color : #444;
+.event-category>span {
+	color: #444;
 	font-weight: 600;
 }
 
-
-.event-image img{
+.event-image img {
 	width: 300px;
 	margin-bottom: 10px;
+}
+
+.pt-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex: 1 0 auto;
+	flex-wrap : wrap;
+}
+
+.pt-wrap {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+	padding: 20px;
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+	border-radius: 10px;
+	margin: 25px;
+}
+
+.pt-image {
+	width: 100%;
+}
+
+.pt-image>img {
+	width: 100%;
+	height: 450px;
+	object-fit: cover;
+}
+
+.pt-profile {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: white;
+}
+
+.pt-profile p {
+	padding: 12px;
+	font-weight: 700;
 }
 
 #map {
 	width: 400px;
 	height: 396px;
-	flex : 0 0 auto;
+	flex: 0 0 auto;
 }

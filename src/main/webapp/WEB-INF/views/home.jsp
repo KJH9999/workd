@@ -18,6 +18,11 @@
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 	<main>
 	<section id="ImageSlider" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#ImageSlider" data-slide-to="0" class="active"></li>
+			<li data-target="#ImageSlider" data-slide-to="1"></li>
+			<li data-target="#ImageSlider" data-slide-to="2"></li>
+		</ol>
 		<article class="carousel-inner">
 			<div class="carousel-item active">
 				<img class="d-block w-100"
@@ -79,7 +84,8 @@
 								<span>05/03(화) ~ 12/31(토)</span>
 							</div>
 							<div class="event-title">
-								<span>야외에서<br/>운동 할래요!</span>
+								<span>야외에서<br />운동 할래요!
+								</span>
 							</div>
 							<div class="event-subTitle">
 								<span>지루한 실내운동말고 야외에서 운동해요.</span>
@@ -106,7 +112,8 @@
 								<span>식단 관리를 하고 싶어요!</span>
 							</div>
 							<div class="event-subTitle">
-								<span>식단 조절이 어려운 분들을 위해<br/>하나하나 맞춰드려요.</span>
+								<span>식단 조절이 어려운 분들을 위해<br />하나하나 맞춰드려요.
+								</span>
 							</div>
 							<div class="event-category">
 								<span>Diet</span>
@@ -126,6 +133,44 @@
 				<div class="detail">
 					<span><a href="ptTeacher">전체보기 <img
 							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
+				</div>
+			</div>
+			<div class="pt-wrapper">
+				<div class="pt-wrap">
+					<div class="pt-image">
+						<img
+							src="${pageContext.request.contextPath}/image/ptProfile/Pt1.jpg">
+					</div>
+					<div class="pt-profile">
+						<div >
+							<p>Name</p>
+							<p>Phone</p>
+							<p>Instagram</p>
+						</div>
+						<div >
+							<p>강 다니엘</p>
+							<p>010-0000-0000</p>
+							<p>@daniel.k.here</p>
+						</div>
+					</div>
+				</div>
+				<div class="pt-wrap">
+					<div class="pt-image">
+						<img
+							src="${pageContext.request.contextPath}/image/ptProfile/Pt2.jpg">
+					</div>
+					<div class="pt-profile">
+						<div >
+							<p>Name</p>
+							<p>Phone</p>
+							<p>Instagram</p>
+						</div>
+						<div >
+							<p>장원영</p>
+							<p>010-0000-0000</p>
+							<p>@for_everyoung10</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</article>

@@ -37,4 +37,14 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping("join")
+	public String join(Model model) {
+		return "join";
+	}
+	
+	@RequestMapping("board")
+	public String board(Model model) {
+		return "board";
+	}
+	
 }

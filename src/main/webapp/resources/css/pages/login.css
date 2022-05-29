@@ -32,10 +32,18 @@ main {
 	margin-top: 30px;
 }
 
-.input-wrapper {
+.input-wrapper, .button-wrapper {
+	width : 100%;
+}
+
+.input-wrap, .button-wrap {
 	width : 100%;
 	display : flex;
 	justify-content : center;
+}
+
+.input-wrap {
+	
 }
 
 .login-input {
@@ -43,8 +51,12 @@ main {
 	padding: 10px;
 	border: none;
 	outline : none;
+	margin-bottom: 20px;
 	border-bottom: 1px solid gray;
-	margin-bottom: 10px;
+}
+
+.button-wrap {
+	
 }
 
 .login-button {
@@ -59,7 +71,11 @@ main {
 	margin-bottom: 10px;
 }
 
-.company {
+.login-wrapper {
+	
+}
+
+.text-wrapper {
 	margin-top: 15px;
 	display : flex;
 	justify-content : center;

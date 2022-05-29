@@ -25,7 +25,6 @@ public class AdminController {
 	@Inject
 	InquireService inquireService;
 
-
 	@RequestMapping("admin")
 	public String writeinquire(Model model) {
 		System.out.println("admin()");

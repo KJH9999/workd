@@ -14,7 +14,6 @@
 </link>
 </head>
 <body>
-	<<<<<<< HEAD:src/main/webapp/WEB-INF/views/login.jsp
 	<main>
 	<section class="login-wrapper">
 		<form class="login-wrap">
@@ -26,28 +25,31 @@
 				</div>
 			</h1>
 			<div class="input-wrapper">
-				<input type="email" class="login-input" id="email"
-					placeholder="name@example.com">
+				<div class="input-wrap">
+					<input type="email" class="login-input" id="email"
+						placeholder="name@example.com">
+				</div>
+				<div class="input-wrap">
+					<input type="password" class="login-input" id="pw"
+						placeholder="Password">
+				</div>
 			</div>
-			<div class="input-wrapper">
-				<input type="password" class="login-input" id="pw"
-					placeholder="Password">
+			<div class="button-wrapper">
+				<div class="button-wrap">
+					<button class="login-button" type="submit">로그인</button>
+				</div>
+				<div class="button-wrap">
+					<button class="login-button" type="submit">회원가입</button>
+				</div>
 			</div>
-			<div class="input-wrapper">
-				<button class="login-button" type="submit">로그인</button>
-			</div>
-			<div class="input-wrapper">
-				<button class="login-button" type="submit">회원가입</button>
-			</div>
-			<div class="input-wrapper ">
-				<span> <a href="#">아이디/비밀번호 찾기</a>
-				</span>
-			</div>
-			<div class="company">
-				<span> &copy; 2022 - 2022 </span>
-			</div>
-			<p></p>
 		</form>
+		<div class="text-wrapper">
+			<span> <a href="#">아이디/비밀번호 찾기</a>
+			</span>
+		</div>
+		<div class="text-wrapper">
+			<span> &copy; 2022 - 2022 </span>
+		</div>
 	</section>
 
 	</main>

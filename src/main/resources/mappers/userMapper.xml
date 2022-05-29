@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+
+	<select id="userList" resultType="UserDTO">
+		SELECT *
+		FROM user
+	</select>
+
+	<!-- 가입  -->
+	<insert id="insertBoard">
+		INSERT INTO user(email, pw, name,number,gender,birth_date)
+		VALUES(#{email}, #{pw}, #{name},#{number},#{gender},#{birth_date})
+	</insert>
+	
+
+	<select id="login" resultType= "int">
+		SELECT COUNT(*)
+		FROM user
+		WHERE email = #{email} AND pw = #{pw}
+	</select>
+	
+	
+	<select id="forlogin" resultType= "int">
+		SELECT COUNT(*)
+		FROM user
+		WHERE email = "1"
+	</select>
+	
+	<select id="findname" resultType="UserDTO">
+		SELECT *
+		FROM user
+		WHERE email = #{email}
+	</select>
+	
+	<update id="updatePw">
+		UPDATE user
+		SET pw = #{pw}
+		WHERE email = #{email}
+	</update>
+
+	<update id="updateOther">
+		UPDATE user
+		SET name = #{name}, number = #{num}
+		WHERE email = #{email}
+	</update>
+</mapper>

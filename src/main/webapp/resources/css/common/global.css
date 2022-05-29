@@ -8,6 +8,7 @@
 html, body {
 	width: 100%;
 	min-height: 100vh;
+	position: relative;
 }
 
 ul li {
@@ -44,4 +45,23 @@ p {
 	src : url("../../font/NotoSansKR-Bold.otf");
 	font-family : "Noto Sans Kr";
 	font-weight : 700;
+}
+
+@font-face {
+	src : url('../../font/Roboto-Regular.ttf');
+	font-family : "Roboto";
+	font-weight: 400;
+}
+
+@font-face {
+	src : url("../../font/Roboto-Medium.ttf");
+	font-family : "Roboto";
+	font-weight: 500;
+}
+
+
+@font-face {
+	src : url('../../font/Roboto-Bold.ttf');
+	font-family : "Roboto";
+	font-weight: 700;
 }

@@ -51,7 +51,7 @@
 					<div class="dropdown-wrapper">
 						<div class="dropdown">
 							<span class="text">
-								로그인
+								 <a href="login">로그인</a>
 							</span>
 							<ul class="list">
 								<li>내 정보</li>

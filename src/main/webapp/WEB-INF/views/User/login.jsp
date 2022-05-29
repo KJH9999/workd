@@ -9,13 +9,13 @@
 </head>
 <body>
     <main class="login-main">
-        <form class="login-form">
+        <form class="login-form" action="loginOk" method="post">
             <h1>로그인</h1>
             <div class="login-input">
-                <input type="email" class="login-input" id="IdInput" placeholder="name@example.com">
+                <input type="email" class="login-input" id="IdInput" placeholder="name@example.com" name = "email">
             </div>
             <div class="login-input">
-                <input type="password" class="login-input" id="PwInput" placeholder="Password">
+                <input type="password" class="login-input" id="PwInput" placeholder="Password" name = "pw">
             </div>
             <p>
                 <button class="login-btn" type="submit">로그인</button>

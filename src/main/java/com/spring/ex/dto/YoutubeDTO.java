@@ -1,5 +1,10 @@
 package com.spring.ex.dto;
 
+import java.util.HashMap;
+
+import org.json.simple.JSONObject;
+
+
 public class YoutubeDTO {
 	private String title;
 	private String videoUrl;
@@ -47,6 +52,18 @@ public class YoutubeDTO {
 		this.publishedAt = publishedAt;
 	}
 
+	
+	public JSONObject toJson() {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("title", title);
+		map.put("videoUrl", videoUrl);
+		map.put("thumnailUrl", thumnailUrl);
+		map.put("description", description);
+		map.put("publishedAt", publishedAt);
+		
+		return new JSONObject(map);
+	}
+	
 	@Override
 	public String toString() {
 		return "YoutubeDTO [title=" + title

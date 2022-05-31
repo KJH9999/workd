@@ -2,11 +2,12 @@ main {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	
 	display : flex;
 	justify-content : center;
 	align-items: center;
-	
+	background-repeat: no-repeat;
+	background-size : cover;
+	background-position: center;
 	background-image : url("../..//image/imageSlide/imageSlide1.webp");
 
 }
@@ -18,11 +19,6 @@ main {
 	border-radius : 10px;
 	background-color : white;
 	border : 3px solid black;
-	
-	@media screen and (min-width: 816px) {
-		width: 816px;
-		padding : 0 24px;	
-	}
 }
 
 .title {
@@ -42,10 +38,6 @@ main {
 	justify-content : center;
 }
 
-.input-wrap {
-	
-}
-
 .login-input {
 	width : 100%;
 	padding: 10px;
@@ -53,10 +45,6 @@ main {
 	outline : none;
 	margin-bottom: 20px;
 	border-bottom: 1px solid gray;
-}
-
-.button-wrap {
-	
 }
 
 .login-button {

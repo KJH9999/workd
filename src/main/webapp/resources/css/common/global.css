@@ -1,7 +1,7 @@
 * {
-	padding : 0;
-	margin : 0;
-	box-sizing : border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 	font-family: 'Noto Sans KR';
 }
 
@@ -11,17 +11,25 @@ html, body {
 	position: relative;
 }
 
+body {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
 ul li {
-	list-style-type : none;
+	list-style-type: none;
 }
 
 a, a:hover {
-	color : black;
+	color: black;
 	text-decoration: none;
 }
+
 p {
-	margin : 0;
-	padding : 0;
+	margin: 0;
+	padding: 0;
 }
 
 @font-face {
@@ -30,38 +38,37 @@ p {
 }
 
 @font-face {
-	src : url("../../font/NotoSansKR-Regular.otf");
-	font-family : "Noto Sans Kr";
-	font-weight : 400;
-}
-
-@font-face {
-	src : url("../../font/NotoSansKR-Medium.otf");
-	font-family : "Noto Sans Kr";
-	font-weight : 500;
-}
-
-@font-face {
-	src : url("../../font/NotoSansKR-Bold.otf");
-	font-family : "Noto Sans Kr";
-	font-weight : 700;
-}
-
-@font-face {
-	src : url('../../font/Roboto-Regular.ttf');
-	font-family : "Roboto";
+	src: url("../../font/NotoSansKR-Regular.otf");
+	font-family: "Noto Sans Kr";
 	font-weight: 400;
 }
 
 @font-face {
-	src : url("../../font/Roboto-Medium.ttf");
-	font-family : "Roboto";
+	src: url("../../font/NotoSansKR-Medium.otf");
+	font-family: "Noto Sans Kr";
 	font-weight: 500;
 }
 
+@font-face {
+	src: url("../../font/NotoSansKR-Bold.otf");
+	font-family: "Noto Sans Kr";
+	font-weight: 700;
+}
 
 @font-face {
-	src : url('../../font/Roboto-Bold.ttf');
-	font-family : "Roboto";
+	src: url('../../font/Roboto-Regular.ttf');
+	font-family: "Roboto";
+	font-weight: 400;
+}
+
+@font-face {
+	src: url("../../font/Roboto-Medium.ttf");
+	font-family: "Roboto";
+	font-weight: 500;
+}
+
+@font-face {
+	src: url('../../font/Roboto-Bold.ttf');
+	font-family: "Roboto";
 	font-weight: 700;
 }

@@ -1,10 +1,9 @@
 main {
-	min-width: 1000px;
-	padding: 0 100px;
+	
 }
 
-section {
-	
+.content-wrapper {
+	padding : 0 100px;
 }
 
 #ImageSlider {

@@ -3,14 +3,11 @@
 
 <mapper namespace="youtube">
 	<select id="selectYoutubeList" resultType="YoutubeDTO">
-		SELECT *
-		FROM youtubeList
-		LIMIT {start}, 5
-		ORDER BY publishedAt ASC
+		SELECT * FROM youtube ORDER BY publishedAt ASC LIMIT #{start}, 5
 	</select>
 	
 	<insert id="insertYoutubeList">
-		INSERT INTO user(title, videoUrl, thumnailUrl, description, publishedAt)
+		INSERT INTO youtube(title, videoUrl, thumnailUrl, description, publishedAt)
 		VALUES(#{title}, #{videoUrl}, #{thumnailUrl}, #{description}, #{publishedAt})
 	</insert>
 		

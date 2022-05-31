@@ -31,7 +31,7 @@ public class YoutubeDTO {
 	public String getThumnailUrl() {
 		return thumnailUrl;
 	}
-
+	
 	public void setThumnailUrl(String thumnailUrl) {
 		this.thumnailUrl = thumnailUrl;
 	}
@@ -53,7 +53,7 @@ public class YoutubeDTO {
 	}
 
 	
-	public JSONObject toJson() {
+	public JSONObject toJSONObject() {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("title", title);
 		map.put("videoUrl", videoUrl);

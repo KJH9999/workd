@@ -1,12 +1,14 @@
 package com.spring.ex.service;
 
 import java.util.HashMap;
+import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Repository;
 
 
 @Repository 
 public interface YoutubeService {
-	public void getYoutubeListByJson();
+	public String getYoutubeList(Integer start);
 	public void updateYoutubeList(HashMap<String,String> hashMap);
 }

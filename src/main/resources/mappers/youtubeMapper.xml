@@ -3,7 +3,7 @@
 
 <mapper namespace="youtube">
 	<select id="selectYoutubeList" resultType="YoutubeDTO">
-		SELECT * FROM youtube ORDER BY publishedAt ASC LIMIT #{start}, 5
+		SELECT * FROM youtube ORDER BY publishedAt ASC LIMIT #{start}, #{bound}
 	</select>
 	
 	<insert id="insertYoutubeList">

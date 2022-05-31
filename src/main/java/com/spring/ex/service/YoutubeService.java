@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository 
 public interface YoutubeService {
-	public String getYoutubeList(Integer start);
+	public String getYoutubeList(Integer start, Integer bound);
 	public void updateYoutubeList(HashMap<String,String> hashMap);
 }

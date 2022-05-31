@@ -20,9 +20,9 @@ public class YoutubeServiceImp implements YoutubeService{
 	YoutubeDAO youtubeDAO;
 	
 	@Override
-	public String getYoutubeList(Integer start) {
+	public String getYoutubeList(Integer start, Integer bound) {
 		JSONArray jsonArray = new JSONArray();
-		List<YoutubeDTO> youtubeList = youtubeDAO.youtubeList(start);
+		List<YoutubeDTO> youtubeList = youtubeDAO.youtubeList(start, bound);
 		
 		for(YoutubeDTO youtubeInfo : youtubeList) {
 			HashMap<String, String> saveYoutubeInfo = new HashMap<String, String>();

@@ -17,10 +17,11 @@ public class YoutubeDAOImp implements YoutubeDAO {
 	SqlSession sqlSession;
 
 	@Override
-	public List<YoutubeDTO> youtubeList(Integer start) {
+	public List<YoutubeDTO> youtubeList(Integer start, Integer bound) {
 		HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
 		
-		hashMap.put("start", 0);
+		hashMap.put("start", start);
+		hashMap.put("bound", bound);
 		return sqlSession.selectList("youtube.selectYoutubeList", hashMap);
 	}
 	

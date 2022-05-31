@@ -9,6 +9,6 @@ import com.spring.ex.dto.YoutubeDTO;
 
 @Repository
 public interface YoutubeDAO {
-	public List<YoutubeDTO> youtubeList(Integer start);
+	public List<YoutubeDTO> youtubeList(Integer start, Integer bound);
 	public void insertYoutubeList(HashMap<String, String> hashMap);
 }

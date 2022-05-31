@@ -2,13 +2,12 @@
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
+<%@ include file="../common/common.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Document</title>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/common/global.css">
-</link>
+
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/pages/login.css">
 </link>
@@ -16,7 +15,7 @@
 <body>
 	<main>
 	<section class="login-wrapper">
-		<form class="login-wrap">
+		<form action="loginOK" class="login-wrap">
 			<h1 class="title">
 				<div>
 					<a href="home"> <img

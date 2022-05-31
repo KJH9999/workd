@@ -2,6 +2,7 @@
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
+<%@ include file="./common/common.jsp"%>
 <html>
 <head>
 <title>Home</title>
@@ -39,6 +40,13 @@
 					src="${pageContext.request.contextPath}/image/imageSlide/imageSlide3.webp"
 					alt="Third slide">
 			</div>
+			<a class="carousel-control-prev" href="#ImageSlider" role="button"
+				data-slide="prev"> <span class="carousel-control-prev-icon"
+				aria-hidden="true"></span> <span class="sr-only">Previous</span>
+			</a> <a class="carousel-control-next" href="#ImageSlider" role="button"
+				data-slide="next"> <span class="carousel-control-next-icon"
+				aria-hidden="true"></span> <span class="sr-only">Next</span>
+			</a>
 		</article>
 	</section>
 	<section class="content-wrapper">
@@ -142,12 +150,12 @@
 							src="${pageContext.request.contextPath}/image/ptProfile/Pt1.jpg">
 					</div>
 					<div class="pt-profile">
-						<div >
+						<div>
 							<p>Name</p>
 							<p>Phone</p>
 							<p>Instagram</p>
 						</div>
-						<div >
+						<div>
 							<p>강 다니엘</p>
 							<p>010-0000-0000</p>
 							<p>@daniel.k.here</p>
@@ -160,12 +168,12 @@
 							src="${pageContext.request.contextPath}/image/ptProfile/Pt2.jpg">
 					</div>
 					<div class="pt-profile">
-						<div >
+						<div>
 							<p>Name</p>
 							<p>Phone</p>
 							<p>Instagram</p>
 						</div>
-						<div >
+						<div>
 							<p>장원영</p>
 							<p>010-0000-0000</p>
 							<p>@for_everyoung10</p>
@@ -225,10 +233,6 @@
 	</section>
 	</main>
 
-
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

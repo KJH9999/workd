@@ -30,7 +30,7 @@ public class UserController {
 		return "User/login";
 	}
 
-	// ·Î±×ÀÎ ¼¼¼Ç±â´É Ãß°¡
+	// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ ï¿½ß°ï¿½
 	@RequestMapping("loginOk")
 	public String loginOk(HttpServletRequest request, Model model) {
 
@@ -47,7 +47,7 @@ public class UserController {
 		if (ck != 0) {
 			System.out.println("ok");
 			session.setAttribute("email", email);
-			System.out.println("¼¼¼Ç¼³Á¤O");
+			System.out.println("ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½O");
 			return "User/loginOkbeta";
 		} else {
 			System.out.println("no");
@@ -60,6 +60,9 @@ public class UserController {
 	public String join(Model model) {
 		return "join";
 	}
-
-
+	
+	@RequestMapping("getYoutubeList")
+	public String getYoutubeList(HttpServletRequest request, Model model) {
+		return "join";
+	}
 }

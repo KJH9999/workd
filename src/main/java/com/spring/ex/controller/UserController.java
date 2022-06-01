@@ -8,12 +8,14 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring.ex.dto.UserDTO;
 import com.spring.ex.service.BoardService;
 import com.spring.ex.service.InquireService;
 import com.spring.ex.service.UserService;
+import com.spring.ex.service.YoutubeService;
 
 @Controller
 public class UserController {
@@ -24,6 +26,8 @@ public class UserController {
 	UserService userService;
 	@Inject
 	InquireService inquireService;
+	@Inject
+	YoutubeService youtubeService;
 	
 	@RequestMapping("login")
 	public String login(Model model) {
@@ -61,8 +65,12 @@ public class UserController {
 		return "join";
 	}
 	
+	@ResponseBody
 	@RequestMapping("getYoutubeList")
-	public String getYoutubeList(HttpServletRequest request, Model model) {
-		return "join";
+	public String getYoutubeList(HttpServletRequest request) {
+		Integer start = Integer.parseInt(request.getParameter("start"));
+		Integer bound = Integer.parseInt(request.getParameter("bound"));
+		
+		return youtubeService.getYoutubeList(start, bound);
 	}
 }

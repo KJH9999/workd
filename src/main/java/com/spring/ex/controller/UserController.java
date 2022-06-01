@@ -30,7 +30,6 @@ public class UserController {
 		return "User/login";
 	}
 
-	// �α��� ���Ǳ�� �߰�
 	@RequestMapping("loginOk")
 	public String loginOk(HttpServletRequest request, Model model) {
 
@@ -47,10 +46,8 @@ public class UserController {
 		if (ck != 0) {
 			System.out.println("ok");
 			session.setAttribute("email", email);
-			System.out.println("���Ǽ���O");
 			return "User/loginOkbeta";
 		} else {
-			System.out.println("no");
 			return "home";
 		}
 

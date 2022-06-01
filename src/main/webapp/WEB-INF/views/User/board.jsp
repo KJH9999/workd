@@ -23,8 +23,6 @@
 			<td> 조회수 </td>
 		</tr>
 			
-			<!-- 담는 그릇 dtos model set attribute -->
-			
 			<c:forEach items="${boardlist}" var="boardlist">
 			<tr>
 			<td>${boardlist.idx}</td>
@@ -38,7 +36,7 @@
 		</c:forEach>
 			<tr>
 				<td colspan="5"> <a href="writeview">글작성 </a></td>
-				<td colspan="5"> <a href="loginOk">뒤로가기 </a></td>
+				<td colspan="5"> <a href="loginOkbeta">뒤로가기 </a></td>
 				</tr>
 	</table>
 	

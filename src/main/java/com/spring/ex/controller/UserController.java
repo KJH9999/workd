@@ -71,6 +71,6 @@ public class UserController {
 		Integer start = Integer.parseInt(request.getParameter("start"));
 		Integer bound = Integer.parseInt(request.getParameter("bound"));
 		
-		return youtubeService.getYoutubeList(start, bound);
+		return youtubeService.getYoutubeList(start, bound).toString();
 	}
 }

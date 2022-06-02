@@ -15,6 +15,11 @@ public class YoutubeDAOImp implements YoutubeDAO {
 
 	@Inject
 	SqlSession sqlSession;
+	
+	@Override
+	public int youtubeListNum() {
+		return sqlSession.selectOne("youtube.selectYoutubeListNum", "num" );
+	}
 
 	@Override
 	public List<YoutubeDTO> youtubeList(Integer start, Integer bound) {

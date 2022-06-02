@@ -8,10 +8,14 @@ import org.json.simple.JSONObject;
 public class YoutubeDTO {
 	private String title;
 	private String videoUrl;
-	private String thumnailUrl;
+	private String thumbnailUrl;
 	private String description;
 	private String publishedAt;
 
+	public YoutubeDTO() {
+		
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -28,12 +32,12 @@ public class YoutubeDTO {
 		this.videoUrl = videoUrl;
 	}
 
-	public String getThumnailUrl() {
-		return thumnailUrl;
+	public String getThumbnailUrl() {
+		return thumbnailUrl;
 	}
 	
-	public void setThumnailUrl(String thumnailUrl) {
-		this.thumnailUrl = thumnailUrl;
+	public void setThumbnailUrl(String thumbnailUrl) {
+		this.thumbnailUrl = thumbnailUrl;
 	}
 
 	public String getDescription() {
@@ -57,7 +61,7 @@ public class YoutubeDTO {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("title", title);
 		map.put("videoUrl", videoUrl);
-		map.put("thumnailUrl", thumnailUrl);
+		map.put("thumbnailUrl", thumbnailUrl);
 		map.put("description", description);
 		map.put("publishedAt", publishedAt);
 		
@@ -68,7 +72,7 @@ public class YoutubeDTO {
 	public String toString() {
 		return "YoutubeDTO [title=" + title
 				+ ", videoUrl=" + videoUrl
-				+ ", thumnailUrl=" + thumnailUrl
+				+ ", thumnailUrl=" + thumbnailUrl
 				+ ", description=" + description 
 				+ ", publishedAt=" + publishedAt 
 				+ "]";

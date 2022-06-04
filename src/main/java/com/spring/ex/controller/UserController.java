@@ -32,7 +32,7 @@ public class UserController {
 	InquireService inquireService;
 	@Inject
 	YoutubeService youtubeService;
-	
+
 	private LocalDateTime youtubeRefDateTime = LocalDateTime.now();
 
 	@RequestMapping("login")
@@ -69,16 +69,16 @@ public class UserController {
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "getYoutubeList", produces="text/plain;charset=UTF-8")
+	@RequestMapping(value = "getYoutubeList", produces = "text/plain;charset=UTF-8")
 	public String getYoutubeList(HttpServletRequest request) {
 		LocalDateTime currentDateTime = LocalDateTime.now();
 		Duration duration = Duration.between(youtubeRefDateTime, currentDateTime);
-		
+
 		youtubeService.saveRemoteYoutebeList();
-		
+
 		Integer start = Integer.parseInt(request.getParameter("start"));
 		Integer bound = Integer.parseInt(request.getParameter("bound"));
 
-		return youtubeService.getYoutubeList(start, bound).toString();
+		return youtubeService.getYoutubeList(start, bound).toJSONString();
 	}
 }

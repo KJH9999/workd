@@ -79,7 +79,6 @@ public class YoutubeServiceImp implements YoutubeService {
 				String remoteGetVideosUrlByPublishedAt = remoteGetVideosUrl
 						+ (publishedAtBefore != null ? "&publishedBefore=" + publishedAtBefore
 								: "&publishedAfter=" + publishedAtAfter);
-				System.out.println(remoteGetVideosUrlByPublishedAt);
 				URL url = new URL(remoteGetVideosUrlByPublishedAt);
 				YoutubeVideoSearchResult videoResult = mapper.readValue(url, YoutubeVideoSearchResult.class);
 				YoutubeVideoSearchResult.PageInfo pageInfo = videoResult.getPageInfo();

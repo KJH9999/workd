@@ -69,7 +69,7 @@ public class UserController {
 	}
 
 	@ResponseBody
-	@RequestMapping("getYoutubeList")
+	@RequestMapping(value = "getYoutubeList", produces="text/plain;charset=UTF-8")
 	public String getYoutubeList(HttpServletRequest request) {
 		LocalDateTime currentDateTime = LocalDateTime.now();
 		Duration duration = Duration.between(youtubeRefDateTime, currentDateTime);

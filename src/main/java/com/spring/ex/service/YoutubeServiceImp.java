@@ -2,15 +2,9 @@ package com.spring.ex.service;
 
 import java.util.List;
 import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
@@ -53,9 +47,12 @@ public class YoutubeServiceImp implements YoutubeService {
 				.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")).toString();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void saveRemoteYoutebeList() {
-		ObjectMapper mapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		
 		String remoteGetVideosUrl = baseUrl + "?key=" + youtubeApiKey + "&channelId=" + channelId + "&order=date"
 				+ "&part=snippet" + "&maxResults=50" + "&type=video" + "&videoEmbeddable=true";
 		String publishedAtBefore = null;
@@ -122,20 +119,12 @@ public class YoutubeServiceImp implements YoutubeService {
 
 	@Override
 	public JSONArray getYoutubeList(Integer start, Integer bound) {
-		JSONArray jsonArray = new JSONArray();
+		JSONArray youtubeJson = new JSONArray();
 		List<YoutubeDTO> youtubeList = youtubeDAO.youtubeList(start, bound);
-
-		for (YoutubeDTO youtubeInfo : youtubeList) {
-			HashMap<String, String> saveYoutubeInfo = new HashMap<String, String>();
-
-			saveYoutubeInfo.put("title", youtubeInfo.getTitle());
-			saveYoutubeInfo.put("videoUrl", youtubeInfo.getVideoUrl());
-			saveYoutubeInfo.put("thumbnailUrl", youtubeInfo.getThumbnailUrl());
-			saveYoutubeInfo.put("description", youtubeInfo.getDescription());
-			saveYoutubeInfo.put("publishedAt", youtubeInfo.getPublishedAt());
-			jsonArray.add(saveYoutubeInfo);
+		for (YoutubeDTO youtube : youtubeList) {
+			youtubeJson.add(youtube.toJSONObject());
 		}
 
-		return jsonArray;
+		return youtubeJson;
 	}
 }

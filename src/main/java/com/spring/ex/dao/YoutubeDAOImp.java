@@ -15,21 +15,16 @@ public class YoutubeDAOImp implements YoutubeDAO {
 
 	@Inject
 	SqlSession sqlSession;
-	
-	@Override
-	public int youtubeListNum() {
-		return sqlSession.selectOne("youtube.selectYoutubeListNum", "num" );
-	}
 
 	@Override
 	public List<YoutubeDTO> youtubeList(Integer start, Integer bound) {
 		HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
-		
+
 		hashMap.put("start", start);
 		hashMap.put("bound", bound);
 		return sqlSession.selectList("youtube.selectYoutubeList", hashMap);
 	}
-	
+
 	@Override
 	public void insertYoutubeList(HashMap<String, String> hashMap) {
 		sqlSession.insert("youtube.insertYoutubeList", hashMap);

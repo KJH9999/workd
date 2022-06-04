@@ -10,6 +10,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -37,85 +40,71 @@ public class YoutubeServiceImp implements YoutubeService {
 	private String baseUrl = "https://www.googleapis.com/youtube/v3/search";
 	private String channelId = "UC3hRpIQ4x5niJDwjajQSVPg";
 
-	@Override
-	public int getRemoteYoutubeVideosNum() {
-		Integer remoteYoutubeVideoNum = null;
-		String getVideosNumberByArgs = "?key=" + youtubeApiKey
-				+ "&part=snippet&channelId=UC3hRpIQ4x5niJDwjajQSVPg&maxResults=";
-		String getVideosNumber = baseUrl + getVideosNumberByArgs + "0";
-		try {
-			URL url = new URL(getVideosNumber);
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	public String getLocalDateTimeToUTCString(String localDateTime) {
+		DateTimeFormatter formatter = DateTimeFormatter
+				.ofPattern("" + "[yyyy-MM-dd HH:mm:ss.S]" + "[yyyy-MM-dd HH:mm:ss]");
 
-			conn.setRequestMethod("GET");
-			conn.connect();
+		return LocalDateTime.parse(localDateTime, formatter).atOffset(ZoneOffset.UTC)
+				.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh:mm:ss'Z'")).toString();
+	}
 
-			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			String inputLine;
-			StringBuffer content = new StringBuffer();
-			while ((inputLine = in.readLine()) != null) {
-				content.append(inputLine);
-			}
-			in.close();
-
-			String jsonString = content.toString();
-			Pattern pattern = Pattern.compile("\"totalResults\": ([^d$,]+)");
-			Matcher matcher = pattern.matcher(jsonString);
-			if (matcher.find()) {
-				remoteYoutubeVideoNum = Integer.parseInt(matcher.group(1));
-			} else {
-				remoteYoutubeVideoNum = 0;
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		;
-		return remoteYoutubeVideoNum;
+	public String getUTCToLocalDateTimeString(String utc) {
+		return ZonedDateTime.parse(utc, DateTimeFormatter.ISO_DATE_TIME).toLocalDateTime()
+				.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")).toString();
 	}
 
 	@Override
-	public int getOriginYoutubeVideosNum() {
-		return youtubeDAO.youtubeListNum();
-	}
-
-	@Override
-	public void getRemoteAndSaveYoutubeList(int videoNum) {
+	public void saveRemoteYoutebeList() {
 		ObjectMapper mapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		String getRemoteVideos = baseUrl + "?key=" + youtubeApiKey + "&channelId=" + channelId +  "&order=date&part=snippet&maxResults=50&type=video&videoEmbeddable=true";
-		String nextPageToken = "";
-		String publishedAt = "";
-		System.out.println(getRemoteVideos);			
+		String remoteGetVideosUrl = baseUrl + "?key=" + youtubeApiKey + "&channelId=" + channelId + "&order=date"
+				+ "&part=snippet" + "&maxResults=50" + "&type=video" + "&videoEmbeddable=true";
+		String publishedAtBefore = null;
+		String publishedAtAfter = null;
+		String publishedAt = null;
+		String resultsPerPage = "";
+
+		List<YoutubeDTO> youtubeList = youtubeDAO.youtubeList(0, 1);
+		if (youtubeList.isEmpty()) {
+			publishedAtBefore = getLocalDateTimeToUTCString(
+				LocalDateTime
+				.now()
+				.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"))
+				.toString()
+			);
+		} else {
+			publishedAtAfter = getLocalDateTimeToUTCString(youtubeList.get(0).getPublishedAt());
+		}
 		try {
 			do {
-				String getRemoteVidoesByPublishedAt = getRemoteVideos + "&publishedBefore=" + publishedAt;
-				URL url = new URL(nextPageToken == "" ? getRemoteVideos : getRemoteVidoesByPublishedAt);
+				String remoteGetVideosUrlByPublishedAt = remoteGetVideosUrl
+						+ (publishedAtBefore != null ? "&publishedBefore=" + publishedAtBefore
+								: "&publishedAfter=" + publishedAtAfter);
+				URL url = new URL(remoteGetVideosUrlByPublishedAt);
 				YoutubeVideoSearchResult videoResult = mapper.readValue(url, YoutubeVideoSearchResult.class);
-				nextPageToken = videoResult.getNextPageToken();
+				YoutubeVideoSearchResult.PageInfo pageInfo = videoResult.getPageInfo();
 				List<YoutubeVideoSearchResult.VideoItem> videoItems = videoResult.getItems();
-				
-				for(YoutubeVideoSearchResult.VideoItem videoItem : videoItems) {
+
+				for (YoutubeVideoSearchResult.VideoItem videoItem : videoItems) {
 					YoutubeVideoSearchResult.VideoItem.Id id = videoItem.getId();
 					YoutubeVideoSearchResult.VideoItem.Snippet snippet = videoItem.getSnippet();
-					
-					HashMap<String ,String> hashMap = new HashMap<String, String>();
+
+					HashMap<String, String> hashMap = new HashMap<String, String>();
 					hashMap.put("title", snippet.getTitle());
-					
-					String videoUrl = id.getVideoId();
-					if(videoUrl == null) continue;
-					
 					hashMap.put("videoUrl", id.getVideoId());
 					hashMap.put("thumbnailUrl", snippet.getThumnails().getHigh().getUrl());
 					hashMap.put("description", snippet.getDescription());
-							
 					publishedAt = snippet.getPublishedAt();
-					String parsedPublishedAt = ZonedDateTime.parse(publishedAt)
-							.format(DateTimeFormatter
-							.ofPattern("yyyy-MM-dd hh:mm:ss"));
+					String parsedPublishedAt = getUTCToLocalDateTimeString(publishedAt);
 					hashMap.put("publishedAt", parsedPublishedAt);
 					youtubeDAO.insertYoutubeList(hashMap);
 				}
-				
-			} while(nextPageToken != null);
+				if (publishedAtBefore != null)
+					publishedAtBefore = publishedAt;
+				else
+					publishedAtAfter = publishedAt;
+
+				resultsPerPage = pageInfo.getResultsPerPage();
+			} while (resultsPerPage.equals("50"));
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (JsonParseException e) {
@@ -127,8 +116,8 @@ public class YoutubeServiceImp implements YoutubeService {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		};
-		
+		}
+		;
 	}
 
 	@Override

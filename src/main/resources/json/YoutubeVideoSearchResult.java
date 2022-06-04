@@ -140,22 +140,19 @@ public class YoutubeVideoSearchResult {
 
 	static public class PageInfo {
 		private String TotalResults;
-		private String resultPerPage;
-
+		private String resultsPerPage;
+		
 		public String getTotalResults() {
 			return TotalResults;
 		}
-
 		public void setTotalResults(String totalResults) {
 			TotalResults = totalResults;
 		}
-
-		public String getResultPerPage() {
-			return resultPerPage;
+		public String getResultsPerPage() {
+			return resultsPerPage;
 		}
-
-		public void setResultPerPage(String resultPerPage) {
-			this.resultPerPage = resultPerPage;
+		public void setResultsPerPage(String resultsPerPage) {
+			this.resultsPerPage = resultsPerPage;
 		}
 	}
 

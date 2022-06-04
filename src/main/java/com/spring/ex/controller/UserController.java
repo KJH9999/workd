@@ -74,11 +74,7 @@ public class UserController {
 		LocalDateTime currentDateTime = LocalDateTime.now();
 		Duration duration = Duration.between(youtubeRefDateTime, currentDateTime);
 		
-		if(duration.between(youtubeRefDateTime, currentDateTime).getSeconds() >= 600) {
-			int remoteVideoNum = youtubeService.getRemoteYoutubeVideosNum();
-			// 현재 DB에 들어있는 동영상 갯수와 Remote서버에 있는 동영상 개수가 같다면 패스,
-			// 같지 않다면 리모트 서버에서 동영상 불러오기
-		}
+		youtubeService.saveRemoteYoutebeList();
 		
 		Integer start = Integer.parseInt(request.getParameter("start"));
 		Integer bound = Integer.parseInt(request.getParameter("bound"));

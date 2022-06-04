@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository 
 public interface YoutubeService {
-	public int getRemoteYoutubeVideosNum();
-	public int getOriginYoutubeVideosNum();
-	public void getRemoteAndSaveYoutubeList(int videoNum);
+	public String getLocalDateTimeToUTCString(String localDateTime);
+	public String getUTCToLocalDateTimeString(String UTC);
+	public void saveRemoteYoutebeList();
 	public JSONArray getYoutubeList(Integer start, Integer bound);
 }

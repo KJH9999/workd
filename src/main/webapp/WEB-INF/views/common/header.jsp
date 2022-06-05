@@ -26,21 +26,14 @@
 						<ul class="list">
 							<li>게시판</li>
 							<li>이벤트</li>
-							<li>문의사항</li>
-						</ul>
-					</div>
-					<div class="dropdown">
-						<span class="text"> 등록/문의 </span>
-						<ul class="list">
-							<li>등록하기</li>
-							<li>상담하기</li>
 						</ul>
 					</div>
 					<div class="dropdown">
 						<span class="text"> 이용안내 </span>
 						<ul class="list">
 							<li>시간표</li>
-							<li>시설위치</li>
+							<li>위치</li>
+							<li>내부 시설</li>
 						</ul>
 					</div>
 				</div>

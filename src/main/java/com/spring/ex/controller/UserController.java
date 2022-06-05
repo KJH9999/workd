@@ -70,7 +70,7 @@ public class UserController {
 	
 	@RequestMapping("join")
 	public String join(Model model) {
-		return "join";
+		return "User/join";
 	}
 	
 	@RequestMapping("boardWrite")

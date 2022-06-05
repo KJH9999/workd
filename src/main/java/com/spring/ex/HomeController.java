@@ -1,21 +1,32 @@
 package com.spring.ex;
-
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
-
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import com.spring.ex.dto.BoardDTO;
+import com.spring.ex.dto.UserDTO;
+import com.spring.ex.service.RankingService;
+import com.spring.ex.service.UserService;
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
+	
+	@Inject
+	UserService userService;
+	
+	@Inject
+	RankingService rankingService;
 	
 	private static final Logger logger =
 	 LoggerFactory.getLogger(HomeController.class);
@@ -36,6 +47,7 @@ public class HomeController {
 		
 		return "home";
 	}
-
+	
+	
 	
 }

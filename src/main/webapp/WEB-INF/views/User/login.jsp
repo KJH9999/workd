@@ -11,11 +11,18 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/pages/login.css">
 </link>
+<style>
+	.error-wrapper {
+		color : red;
+		text-align : center;
+		margin-bottom: 20px;
+	}
+</style>
 </head>
 <body>
 	<main>
 	<section class="login-wrapper">
-		<form action="loginOK" class="login-wrap">
+		<form action="loginOk" method="post" class="login-wrap">
 			<h1 class="title">
 				<div>
 					<a href="home"> <img
@@ -25,20 +32,30 @@
 			</h1>
 			<div class="input-wrapper">
 				<div class="input-wrap">
-					<input type="email" class="login-input" id="email"
+					<input type="email" class="login-input" id="email" name="email"
 						placeholder="name@example.com">
 				</div>
 				<div class="input-wrap">
-					<input type="password" class="login-input" id="pw"
+					<input type="password" class="login-input" id="pw" name="pw"
 						placeholder="Password">
 				</div>
 			</div>
+			<%
+				Boolean isLoginFail = (Boolean)request.getAttribute("isLoginFail");
+				if(isLoginFail != null) {
+			%>
+				<div class="error-wrapper">
+					<span>로그인을 실패하였습니다.</span>
+				</div>
+			<%
+				}
+			%>
 			<div class="button-wrapper">
 				<div class="button-wrap">
 					<button class="login-button" type="submit">로그인</button>
 				</div>
 				<div class="button-wrap">
-					<button class="login-button" type="submit">회원가입</button>
+					<button class="login-button" type="button">회원가입</button>
 				</div>
 			</div>
 		</form>

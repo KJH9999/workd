@@ -72,6 +72,10 @@ header .list > li {
 	cursor : pointer;
 }
 
+header .list > li > a, header .list > li > a:hover {
+	color : white;
+}
+
 header .list>li:first-child {
 	padding-top: 20px;
 }

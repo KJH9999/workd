@@ -2,7 +2,7 @@
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
-<%@ include file="../common/common.jsp" %>
+<%@ include file="../common/common.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +12,11 @@
 	href="${pageContext.request.contextPath}/css/pages/login.css">
 </link>
 <style>
-	.error-wrapper {
-		color : red;
-		text-align : center;
-		margin-bottom: 20px;
-	}
+.error-wrapper {
+	color: red;
+	text-align: center;
+	margin-bottom: 20px;
+}
 </style>
 </head>
 <body>
@@ -41,27 +41,31 @@
 				</div>
 			</div>
 			<%
-				Boolean isLoginFail = (Boolean)request.getAttribute("isLoginFail");
-				if(isLoginFail != null) {
+				Boolean isLoginFail = (Boolean) request.getAttribute("isLoginFail");
+				if (isLoginFail != null) {
 			%>
-				<div class="error-wrapper">
-					<span>로그인을 실패하였습니다.</span>
-				</div>
+			<div class="error-wrapper">
+				<span>로그인을 실패하였습니다.</span>
+			</div>
 			<%
 				}
 			%>
 			<div class="button-wrapper">
 				<div class="button-wrap">
-					<button class="login-button" type="submit">로그인</button>
+					<button class="login-button" type="submit">
+						<span>로그인</span>
+					</button>
 				</div>
 				<div class="button-wrap">
-					<button class="login-button" type="button">회원가입</button>
+					<button class="login-button" type="button">
+						<a href="join"> <span>회원가입</span>
+						</a>
+					</button>
 				</div>
 			</div>
 		</form>
 		<div class="text-wrapper">
-			<span> <a href="#">아이디/비밀번호 찾기</a>
-			</span>
+			<a href="#"><span> 아이디/비밀번호 찾기 </span></a>
 		</div>
 		<div class="text-wrapper">
 			<span> &copy; 2022 - 2022 </span>

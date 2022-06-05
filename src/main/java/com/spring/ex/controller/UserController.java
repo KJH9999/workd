@@ -75,7 +75,7 @@ public class UserController {
 		LocalDateTime currentDateTime = LocalDateTime.now();
 		Duration duration = Duration.between(youtubeRefDateTime, currentDateTime);
 
-		youtubeService.saveRemoteYoutebeList();
+		if(duration.getSeconds() > 24 * 60 * 60) youtubeService.saveRemoteYoutebeList();
 
 		Integer start = Integer.parseInt(request.getParameter("start"));
 		Integer bound = Integer.parseInt(request.getParameter("bound"));

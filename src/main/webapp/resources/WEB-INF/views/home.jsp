@@ -191,6 +191,28 @@
 
 				</div>
 			</div>
+			<div class="youtube-wrapper">
+				<div class="main-video-wrapper">
+					<div class="main-video-wrap"></div>
+				</div>
+				<div id="youtubeImageSlider">
+					<div class="youtube-slider-wrapper">
+						<div class="youtube-slider-wrap">
+							"videoUrl":"an29JFtzohk"
+							"publishedAt":"2022-06-04 03:00:01.0"
+							"description":"선배님들 Wassup쥬르~ 블리예요^^\u200D❤️\u200D 인생이 명.품. 그 자체인 제가✨ヾ(o✪\u203F✪o)ｼ 이번에 붜얼ring 선Su와 소개팅을 했답니다( ...",
+							"title":"소개팅남이 상위 0.1% 부자라면? #youtubeshorts  #shorts",
+							"thumbnailUrl":""
+							<div class="youtube-thumbnail">
+								<img src="https://i.ytimg.com/vi/an29JFtzohk/hqdefault.jpg" />
+							</div>
+							<div class="youtube-title">
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</article>
 		<article>
 			<div class="title">

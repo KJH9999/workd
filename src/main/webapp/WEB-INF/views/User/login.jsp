@@ -15,7 +15,7 @@
 <body>
 	<main>
 	<section class="login-wrapper">
-		<form action="loginOK" class="login-wrap">
+		<form action="loginOk" method="post" class="login-wrap">
 			<h1 class="title">
 				<div>
 					<a href="home"> <img
@@ -25,11 +25,11 @@
 			</h1>
 			<div class="input-wrapper">
 				<div class="input-wrap">
-					<input type="email" class="login-input" id="email"
+					<input type="email" class="login-input" id="email" name="email"
 						placeholder="name@example.com">
 				</div>
 				<div class="input-wrap">
-					<input type="password" class="login-input" id="pw"
+					<input type="password" class="login-input" id="pw" name="pw"
 						placeholder="Password">
 				</div>
 			</div>
@@ -38,7 +38,7 @@
 					<button class="login-button" type="submit">로그인</button>
 				</div>
 				<div class="button-wrap">
-					<button class="login-button" type="submit">회원가입</button>
+					<button class="login-button" type="button">회원가입</button>
 				</div>
 			</div>
 		</form>

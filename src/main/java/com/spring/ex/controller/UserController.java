@@ -40,6 +40,11 @@ public class UserController {
 	public String login(Model model) {
 		return "User/login";
 	}
+	
+	@RequestMapping("logout")
+	public String logout(Model model) {
+		return "User/logout";
+	}
 
 	@RequestMapping("loginOk")
 	public String loginOk(HttpServletRequest request, Model model) {
@@ -57,9 +62,9 @@ public class UserController {
 		if (ck != 0) {
 			System.out.println("ok");
 			session.setAttribute("email", email);
-			return "User/loginOkbeta";
-		} else {
 			return "home";
+		} else {
+			return "User/login";
 		}
 
 	}

@@ -11,6 +11,13 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/pages/login.css">
 </link>
+<style>
+	.error-wrapper {
+		color : red;
+		text-align : center;
+		margin-bottom: 20px;
+	}
+</style>
 </head>
 <body>
 	<main>
@@ -33,6 +40,16 @@
 						placeholder="Password">
 				</div>
 			</div>
+			<%
+				Boolean isLoginFail = (Boolean)request.getAttribute("isLoginFail");
+				if(isLoginFail != null) {
+			%>
+				<div class="error-wrapper">
+					<span>로그인을 실패하였습니다.</span>
+				</div>
+			<%
+				}
+			%>
 			<div class="button-wrapper">
 				<div class="button-wrap">
 					<button class="login-button" type="submit">로그인</button>

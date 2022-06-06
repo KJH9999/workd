@@ -6,6 +6,7 @@
 <html>
 <head>
 <title>Home</title>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -192,25 +193,30 @@
 				</div>
 			</div>
 			<div class="youtube-wrapper">
-				<div class="main-video-wrapper">
-					<div class="main-video-wrap"></div>
-				</div>
-				<div id="youtubeImageSlider">
-					<div class="youtube-slider-wrapper">
-						<div class="youtube-slider-wrap">
-							"videoUrl":"an29JFtzohk"
-							"publishedAt":"2022-06-04 03:00:01.0"
-							"description":"선배님들 Wassup쥬르~ 블리예요^^\u200D❤️\u200D 인생이 명.품. 그 자체인 제가✨ヾ(o✪\u203F✪o)ｼ 이번에 붜얼ring 선Su와 소개팅을 했답니다( ...",
-							"title":"소개팅남이 상위 0.1% 부자라면? #youtubeshorts  #shorts",
-							"thumbnailUrl":""
-							<div class="youtube-thumbnail">
-								<img src="https://i.ytimg.com/vi/an29JFtzohk/hqdefault.jpg" />
-							</div>
-							<div class="youtube-title">
-							</div>
+				<div class="video-wrapper">
+					<div class="video-wrap">
+						<div class="video">
+							<iframe width="400" height="250"
+								src="https://www.youtube.com/embed/lUYvCHnRy7k"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+						<div class="video">
+							<iframe width="400" height="250"
+								src="https://www.youtube.com/embed/q5dF_qU4KmA"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+						<div class="video">
+							<iframe width="400" height="250"
+								src="https://www.youtube.com/embed/Fx8t90Ypl6A"
+								title="YouTube video player" frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</article>

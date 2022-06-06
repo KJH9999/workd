@@ -7,7 +7,6 @@ header {
 
 header > div {
 	display: flex;
-	padding-bottom: 10px;
 }
 
 header .logo-wrapper {
@@ -43,10 +42,17 @@ header .dropdown {
 
 header .dropdown > .text {
 	width: 100%;
-	padding: 15px 50px;
+	padding: 0px 50px;
 	position: relative;
 	display: inline-block;
 	cursor : pointer;
+	font-family : 'GimpoGothic';
+	font-weight: bold;
+}
+
+header .dropdown > .text > a {
+	font-family : 'GimpoGothic';
+	font-weight: bold;
 }
 
 header .dropdown > .list {

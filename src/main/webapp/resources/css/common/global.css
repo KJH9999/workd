@@ -72,3 +72,17 @@ p {
 	font-family: "Roboto";
 	font-weight: 700;
 }
+
+@font-face {
+    font-family: 'GimpoGothic';
+    src : url('../../font/GimpoGothicBold00.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GimpoGothic';
+    src : url('../../font/GimpoGothicRegular00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

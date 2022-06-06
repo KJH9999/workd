@@ -156,8 +156,50 @@ main {
 	font-weight: 700;
 }
 
+.youtube-wrapper {
+	width: 100%;
+	display : flex;
+	justify-content : center;
+}
+
+.youtube-wrapper > .video-wrapper {
+	width: 400px;
+	display : flex;
+	justify-content : center;
+}
+
+@media screen and (min-width: 1020px) {
+	.youtube-wrapper .video-wrapper {
+		width: 880px;
+	}
+}
+
+@media screen and (min-width: 1540px) {
+	.youtube-wrapper .video-wrapper {
+		width: 1320px;
+	}
+}
+
+.youtube-wrapper .video-wrap {
+	display : flex;
+	flex-wrap : wrap;
+	justify-content : space-between;
+}
+
+.youtube-wrapper .video {
+	margin: 0 20px;
+	
+}
+
+@media screen and (min-width: 1020px) {
+	.youtube-wrapper .video {
+		margin-bottom: 20px;
+	}
+}
+
 #map {
 	width: 400px;
 	height: 396px;
 	flex: 0 0 auto;
 }
+

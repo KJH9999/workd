@@ -10,14 +10,16 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.ex.dto.BoardDTO;
 import com.spring.ex.dto.UserDTO;
 import com.spring.ex.service.BoardService;
 import com.spring.ex.service.InquireService;
+import com.spring.ex.service.RankingService;
+import com.spring.ex.service.RegistService;
 import com.spring.ex.service.UserService;
 import com.spring.ex.service.YoutubeService;
 
@@ -32,8 +34,17 @@ public class UserController {
 	InquireService inquireService;
 	@Inject
 	YoutubeService youtubeService;
+	@Inject
+	RankingService rankingService;
+	@Inject
+	RegistService registService;
 
 	private LocalDateTime youtubeRefDateTime = LocalDateTime.now();
+	
+	@RequestMapping("home")
+	public String home(Model model) {
+		return "home";
+	}
 	
 	@RequestMapping("login")
 	public String login(Model model) {
@@ -53,7 +64,7 @@ public class UserController {
 		System.out.println(ck);
 		if (ck != 0) {
 			session.setAttribute("email", email);
-			System.out.println("세션설정O");
+			System.out.println("�꽭�뀡�꽕�젙O");
 			return "home";
 		} else {
 			model.addAttribute("isLoginFail", true);
@@ -104,5 +115,15 @@ public class UserController {
 		Integer bound = Integer.parseInt(request.getParameter("bound"));
 
 		return youtubeService.getYoutubeList(start, bound).toJSONString();
+	}
+	
+	@RequestMapping("joinOk")
+	public String joinOk(HttpServletRequest request, Model model) {
+		System.out.println("joinOk()");
+		model.addAttribute("request", request);
+		userService.insertUser(model);
+		rankingService.insert(model);
+		registService.insert(model);
+		return "home";
 	}
 }

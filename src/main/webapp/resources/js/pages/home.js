@@ -1,3 +1,43 @@
+function showCategory(category) {
+	const categories = ['squats', 'benchPress', 'deadLift'];
+	const categoryMenu = document
+						.querySelector('.ranking-menu')
+						.getElementsByTagName('li');
+	
+	function setShowCategory(category, value) {
+		const categoryDocument = document.getElementById(category);
+		
+		console.log(category, value);
+		
+		categoryDocument.style.display = (value === true ? 'flex' : 'none');
+	}
+	
+	if(category === 'all') {
+		categories.map((c, index) => {
+			setShowCategory(c, true);
+			categoryMenu[index].style.color = "black";
+			categoryMenu[index].style.backgroundColor = 'white';
+		})
+		categoryMenu[categoryMenu.length - 1].style.color = "white";
+		categoryMenu[categoryMenu.length - 1].style.backgroundColor = 'black';
+	} else {
+		categories.map((c, index) => {
+			setShowCategory(c, c === category);
+			if(c === category) {
+				categoryMenu[index].style.color = "white";
+				categoryMenu[index].style.backgroundColor = 'black';
+			}
+			else {
+				categoryMenu[index].style.color = "black";
+				categoryMenu[index].style.backgroundColor = 'white';
+				categoryMenu[categoryMenu.length - 1].style.color = "black";
+				categoryMenu[categoryMenu.length - 1].style.backgroundColor = 'white';
+			}
+		})
+	}
+}
+
+
 function kakaoMap() {
 	var container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
 	var options = { // 지도를 생성할 때 필요한 기본 옵션

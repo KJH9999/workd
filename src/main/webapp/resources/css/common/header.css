@@ -38,6 +38,7 @@ header .dropdown {
 	position : relative;
 	font-size: 18px;
 	font-family: 'Noto Sans KR', sans-serif;
+	padding : 15px 0px;
 }
 
 header .dropdown > .text {

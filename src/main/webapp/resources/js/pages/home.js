@@ -60,6 +60,31 @@ function kakaoMap() {
 	marker.setMap(map);
 }
 	
-function youtubeImageSlider() {
+function makeCalendar() {
+	function dateClick({dayEl, dateStr}) {
+		 $('.fc-highlight').removeClass('fc-highlight');
+         $(dayEl).children('div').addClass("fc-highlight");
+	}
 	
+	document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          width: '700px',
+          height: '700px',
+          expandRows: true,
+          buttonText : {
+        	  today : 'Today'
+          },
+          headerToolbar: {          
+        	  left: 'prev,next',          
+        	  center: 'title',          
+        	  right: 'today'        
+          },
+          locale: 'ko', 
+          dateClick
+        });
+        calendar.render();
+     });
 }
+makeCalendar();

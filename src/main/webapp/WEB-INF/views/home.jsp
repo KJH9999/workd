@@ -6,11 +6,14 @@
 <html>
 <head>
 <title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+<link rel='stylesheet' type="text/css"
+	href="${pageContext.request.contextPath}/css/external/calendar/main.min.css" />
 <link rel='stylesheet' type="text/css"
 	href="${pageContext.request.contextPath}/css/common/global.css" />
 <link rel='stylesheet' type="text/css"
@@ -235,226 +238,148 @@
 			<div class="ranking-wrapper">
 				<div id="squats" class="ranking-wrap">
 					<div class="title">
-						<span>
-							스쿼트
-						</span>
+						<span> 스쿼트 </span>
 					</div>
 					<div class="ranking-title">
 						<div class="order">
-							<span>
-								순위
-							</span>
+							<span> 순위 </span>
 						</div>
 						<div class="name">
-							<span>
-								이름
-							</span>
+							<span> 이름 </span>
 						</div>
 						<div class="score">
-							<span>
-								점수
-							</span>
+							<span> 점수 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								1
-							</span>
+							<span> 1 </span>
 						</div>
 						<div class="name">
-							<span>
-								장동건
-							</span>
+							<span> 장동건 </span>
 						</div>
 						<div class="score">
-							<span>
-								100
-							</span>
+							<span> 100 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								2
-							</span>
+							<span> 2 </span>
 						</div>
 						<div class="name">
-							<span>
-								이재강
-							</span>
+							<span> 이재강 </span>
 						</div>
 						<div class="score">
-							<span>
-								99
-							</span>
+							<span> 99 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								3
-							</span>
+							<span> 3 </span>
 						</div>
 						<div class="name">
-							<span>
-								김재호
-							</span>
+							<span> 김재호 </span>
 						</div>
 						<div class="score">
-							<span>
-								98
-							</span>
+							<span> 98 </span>
 						</div>
 					</div>
 				</div>
 				<div id="benchPress" class="ranking-wrap">
 					<div class="title">
-						<span>
-							벤치프레스
-						</span>
+						<span> 벤치프레스 </span>
 					</div>
 					<div class="ranking-title">
 						<div class="order">
-							<span>
-								순위
-							</span>
+							<span> 순위 </span>
 						</div>
 						<div class="name">
-							<span>
-								이름
-							</span>
+							<span> 이름 </span>
 						</div>
 						<div class="score">
-							<span>
-								점수
-							</span>
+							<span> 점수 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								1
-							</span>
+							<span> 1 </span>
 						</div>
 						<div class="name">
-							<span>
-								A
-							</span>
+							<span> A </span>
 						</div>
 						<div class="score">
-							<span>
-								100
-							</span>
+							<span> 100 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								2
-							</span>
+							<span> 2 </span>
 						</div>
 						<div class="name">
-							<span>
-								B
-							</span>
+							<span> B </span>
 						</div>
 						<div class="score">
-							<span>
-								99
-							</span>
+							<span> 99 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								3
-							</span>
+							<span> 3 </span>
 						</div>
 						<div class="name">
-							<span>
-								C
-							</span>
+							<span> C </span>
 						</div>
 						<div class="score">
-							<span>
-								98
-							</span>
+							<span> 98 </span>
 						</div>
 					</div>
 				</div>
 				<div id="deadLift" class="ranking-wrap">
 					<div class="title">
-						<span>
-							데드리프트
-						</span>
+						<span> 데드리프트 </span>
 					</div>
 					<div class="ranking-title">
 						<div class="order">
-							<span>
-								순위
-							</span>
+							<span> 순위 </span>
 						</div>
 						<div class="name">
-							<span>
-								이름
-							</span>
+							<span> 이름 </span>
 						</div>
 						<div class="score">
-							<span>
-								점수
-							</span>
+							<span> 점수 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								1
-							</span>
+							<span> 1 </span>
 						</div>
 						<div class="name">
-							<span>
-								A
-							</span>
+							<span> A </span>
 						</div>
 						<div class="score">
-							<span>
-								100
-							</span>
+							<span> 100 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								2
-							</span>
+							<span> 2 </span>
 						</div>
 						<div class="name">
-							<span>
-								B
-							</span>
+							<span> B </span>
 						</div>
 						<div class="score">
-							<span>
-								99
-							</span>
+							<span> 99 </span>
 						</div>
 					</div>
 					<div class="ranking">
 						<div class="order">
-							<span>
-								3
-							</span>
+							<span> 3 </span>
 						</div>
 						<div class="name">
-							<span>
-								C
-							</span>
+							<span> C </span>
 						</div>
 						<div class="score">
-							<span>
-								98
-							</span>
+							<span> 98 </span>
 						</div>
 					</div>
 				</div>
@@ -466,6 +391,30 @@
 				<div class="detail">
 					<span><a href="schedule">전체보기 <img
 							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
+				</div>
+			</div>
+			<div class="calendar-wrapper">
+				<div class="calendar-wrap">
+					<div id="calendar">	
+					
+					</div>
+				</div>
+				<div class="memo-wrapper">
+					<div class="memo-wrap">
+						<div class="title">
+							<span>2022년 06월 9일</span>
+						</div>
+						<div class="list">
+							<ul>
+								<li>
+									저녁 7시~저녁 9시 : 단체 레슨 
+								</li>
+								<li>
+									저녁 9시~저녁 10시 : 개인 레슨
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</article>
@@ -501,9 +450,16 @@
 		crossorigin="anonymous"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cfcbf165593fa61e13e3cdf2e4252f2b&libraries=services"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/external/calendar/locales-all.min.js"></script>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/js/external/calendar/ko.js">
+	</script>
+	<script type="text/javascript"
+		charset="euc-kr"
+		src="${pageContext.request.contextPath}/js/external/calendar/main.min.js">
+	</script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/js/pages/home.js">
-		
 	</script>
 </body>
 </html>

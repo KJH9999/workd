@@ -395,9 +395,7 @@
 			</div>
 			<div class="calendar-wrapper">
 				<div class="calendar-wrap">
-					<div id="calendar">	
-					
-					</div>
+					<div id="calendar"></div>
 				</div>
 				<div class="memo-wrapper">
 					<div class="memo-wrap">
@@ -406,12 +404,8 @@
 						</div>
 						<div class="list">
 							<ul>
-								<li>
-									저녁 7시~저녁 9시 : 단체 레슨 
-								</li>
-								<li>
-									저녁 9시~저녁 10시 : 개인 레슨
-								</li>
+								<li>저녁 7시~저녁 9시 : 단체 레슨</li>
+								<li>저녁 9시~저녁 10시 : 개인 레슨</li>
 							</ul>
 						</div>
 					</div>
@@ -426,17 +420,55 @@
 							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
 				</div>
 			</div>
-			<div id="map"></div>
-			<div>
-				위치 : 경기도 의정부시 서부로 545
-				<button>길찾기</button>
-				<button>카카오 지도에서 보기</button>
+			<div class="map-wrapper">
+				<div class="map-wrap">
+					<div id="map"></div>
+					<div class="button-wrapper"></div>
+					<div class="text-wrapper">
+						<div class="text-wrap">
+							<div>
+								<span>주소</span>
+							</div>
+							<div>
+								<span>경기도 의정부시 서부로 545</span>
+							</div>
+						</div>
+					</div>
+					<div class="text-wrapper">
+						<div class="text-wrap">
+							<div>
+								<span>이용시간</span>
+							</div>
+							<div class="time">
+								<ul>
+									<li><span>평일</span></li>
+									<li><span>토요일</span></li>
+									<li><span>일요일</span></li>
+								</ul>
+								<ul>
+									<li><span>00:00 ~ 24:00</span></li>
+									<li><span>00:00 ~ 22:00</span></li>
+									<li><span>12:00 ~ 22:00</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="text-wrapper">
+						<div class="text-wrap">
+							<div>
+								<span>전화번호</span>
+							</div>
+							<div>
+								<span>031-828-7700</span>
+							</div>
+						</div>
+					</div>
+				</div>
 
 			</div>
+
+
 		</article>
-		<article>광고1</article>
-		<article>광고2</article>
-		<article>광고3</article>
 	</section>
 	</main>
 
@@ -450,16 +482,19 @@
 		crossorigin="anonymous"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cfcbf165593fa61e13e3cdf2e4252f2b&libraries=services"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/js/external/calendar/locales-all.min.js"></script>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/js/external/calendar/locales-all.min.js"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/js/external/calendar/ko.js">
+		
 	</script>
-	<script type="text/javascript"
-		charset="euc-kr"
+	<script type="text/javascript" charset="euc-kr"
 		src="${pageContext.request.contextPath}/js/external/calendar/main.min.js">
+		
 	</script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/js/pages/home.js">
+		
 	</script>
 </body>
 </html>

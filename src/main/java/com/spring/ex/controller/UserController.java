@@ -3,8 +3,6 @@ package com.spring.ex.controller;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.time.Duration;
-import java.time.LocalDateTime;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;

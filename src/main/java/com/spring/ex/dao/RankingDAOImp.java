@@ -53,5 +53,13 @@ public class RankingDAOImp implements RankingDAO{
 	public List<RankingDTO> totallist() {
 		return sqlSession.selectList("ranking.totallist");
 	}
+
+	@Override
+	public void inputTime(String email) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		
+		sqlSession.update("ranking.inputTime", map);
+	}
 	
 }

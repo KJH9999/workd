@@ -7,6 +7,8 @@ public class RankingDTO {
 	private int dead;
 	private int squat;
 	private int total;
+	private String regist;
+	
 	public String getEmail() {
 		return email;
 	}
@@ -43,11 +45,19 @@ public class RankingDTO {
 	public void setTotal(int total) {
 		this.total = total;
 	}
+	public String getRegist() {
+		return regist;
+	}
+	public void setRegist(String regist) {
+		this.regist = regist;
+	}
 	
 	@Override
 	public String toString() {
 		return "RankingDTO [email=" + email + ", name=" + name + ", bench=" + bench + ", dead=" + dead + ", squat="
-				+ squat + ", total=" + total + "]";
+				+ squat + ", total=" + total + ", regist=" + regist + "]";
 	}
+	
+	
 	
 }

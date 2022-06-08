@@ -289,6 +289,13 @@ main {
 	border-bottom: 3px solid black;
 }
 
+.ranking-wrap>.ranking>div>span {
+	font-family : 'GimpoGothic';
+	font-weight : bold;
+	display : inline-block;
+	margin-top:3px;
+}
+
 .ranking-wrap .order {
 	width: 46px;
 	height: 46px;

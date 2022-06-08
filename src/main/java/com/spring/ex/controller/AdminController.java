@@ -66,7 +66,7 @@ public class AdminController {
 		return "admin/income/incomeA";
 	}
 	
-	//게시판 관리(게시글관리,문의사항관리,캘린더관리)
+	//게시판 관리(게시글관리, ,캘린더관리)
 	@RequestMapping("boardA")
 	public String boardA(Model model) {
 		System.out.println("admin()");

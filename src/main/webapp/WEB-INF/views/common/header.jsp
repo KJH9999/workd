@@ -12,7 +12,7 @@
 	<header>
 		<div>
 			<div class="logo-wrapper">
-				<img src="${pageContext.request.contextPath}/image/logo.png" />
+				<a href="home"><img src="${pageContext.request.contextPath}/image/logo.png" /></a>
 				<div class="sns-wrapper">
 					<div>KakaoTalk</div>
 					<div>Instagram</div>
@@ -24,7 +24,7 @@
 					<div class="dropdown">
 						<span class="text"> 커뮤니티 </span>
 						<ul class="list">
-							<li>게시판</li>
+							<li><a href="board">게시판</a></li>
 							<li>이벤트</li>
 						</ul>
 					</div>

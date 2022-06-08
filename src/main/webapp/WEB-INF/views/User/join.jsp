@@ -136,7 +136,7 @@
 						<label for="phoneNo">휴대전화</label>
 					</h3>
 					<span class="box int_mobile"> <input type="tel" id="mobile"
-						class="int" maxlength="11" placeholder="전화번호 입력" name="num">
+						class="int" maxlength="11" placeholder="전화번호 입력" name="number">
 					</span> <span class="error_next_box"></span>
 				</div>
 				<!-- JOIN BTN-->

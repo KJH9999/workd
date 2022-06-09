@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.ex.dto.BoardDTO;
@@ -64,7 +65,7 @@ public class UserController {
 		System.out.println(ck);
 		if (ck != 0) {
 			session.setAttribute("email", email);
-			System.out.println("�꽭�뀡�꽕�젙O");
+			System.out.println("占쎄쉭占쎈�∽옙苑뺧옙�젟O");
 			return "home";
 		} else {
 			model.addAttribute("isLoginFail", true);
@@ -124,5 +125,19 @@ public class UserController {
 		Integer bound = Integer.parseInt(request.getParameter("bound"));
 
 		return youtubeService.getYoutubeList(start, bound).toJSONString();
+	}
+	
+	@RequestMapping(value = "contentView.do", method=RequestMethod.GET)
+	public String contentview(@RequestParam int idx, Model model) {
+		System.out.println("contentView");
+		System.out.println("C :" + idx);
+		//조회수
+		boardService.increaseViewcnt(idx);
+
+		List<BoardDTO> boardlist = boardService.read(idx);
+		model.addAttribute("boardlist", boardlist);
+		model.addAttribute("requset", idx);
+		
+		return "contentView";
 	}
 }

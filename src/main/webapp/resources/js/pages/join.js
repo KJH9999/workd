@@ -47,7 +47,14 @@ gender.addEventListener("focusout", function() {
 email.addEventListener("focusout", isEmailCorrect);
 mobile.addEventListener("focusout", checkPhoneNum);
 
+function onSubmit() {	
+	const [y, m, d] = [yy.value, mm.value, dd.value];
+	var birthDate = document.querySelector('#birth_date');
+	birthDate.value = `${y}-${m}-${d}`;
 
+	
+	console.log(birthDate.value);
+}
 
 
 

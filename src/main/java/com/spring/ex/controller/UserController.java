@@ -82,6 +82,15 @@ public class UserController {
 		return "User/join";
 	}
 	
+	@RequestMapping("joinOk")
+	public String joinOk(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		userService.insertUser(model);
+		rankingService.insert(model);
+		registService.insert(model);
+		return "home";
+	}
+	
 	@RequestMapping("boardWrite")
 	public String boardWrite() {
 		return "editor";
@@ -115,15 +124,5 @@ public class UserController {
 		Integer bound = Integer.parseInt(request.getParameter("bound"));
 
 		return youtubeService.getYoutubeList(start, bound).toJSONString();
-	}
-	
-	@RequestMapping("joinOk")
-	public String joinOk(HttpServletRequest request, Model model) {
-		System.out.println("joinOk()");
-		model.addAttribute("request", request);
-		userService.insertUser(model);
-		rankingService.insert(model);
-		registService.insert(model);
-		return "home";
 	}
 }

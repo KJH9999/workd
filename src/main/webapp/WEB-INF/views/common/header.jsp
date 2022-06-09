@@ -63,6 +63,11 @@
 								<li>내 정보</li>
 								<li>등록하기</li>
 								<li>
+									<a href="inquire">
+										문의하기
+									</a>
+								</li>
+								<li>
 									<a href="logout">로그아웃</a>
 								</li>
 							</ul>

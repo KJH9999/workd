@@ -40,24 +40,24 @@ public class UserController {
 	RegistService registService;
 
 	private LocalDateTime youtubeRefDateTime = LocalDateTime.now();
-	
+
 	@RequestMapping("home")
 	public String home(Model model) {
 		return "home";
 	}
-	
+
 	@RequestMapping("login")
 	public String login(Model model) {
 		return "User/login";
 	}
-	
+
 	@RequestMapping("loginOk")
 	public String loginOk(HttpServletRequest request, Model model) {
 		HttpSession session = request.getSession();
 		String email = request.getParameter("email");
-		
+
 		List<UserDTO> userlist = userService.findname(email);
-		
+
 		model.addAttribute("request", request);
 		model.addAttribute("userlist", userlist);
 		int ck = userService.loginUser(model);
@@ -71,17 +71,17 @@ public class UserController {
 			return login(model);
 		}
 	}
-	
+
 	@RequestMapping("logout")
 	public String logout(Model model) {
 		return "User/logout";
 	}
-	
+
 	@RequestMapping("join")
 	public String join(Model model) {
 		return "User/join";
 	}
-	
+
 	@RequestMapping("joinOk")
 	public String joinOk(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
@@ -90,35 +90,49 @@ public class UserController {
 		registService.insert(model);
 		return "home";
 	}
-	
+
+	@RequestMapping("inquire")
+	public String inquire(@RequestParam String) {
+		return "User/inquire";
+	}
+
+	@RequestMapping("writeinquireOk")
+	public String writeinquireOk(HttpServletRequest request, Model model) {
+		System.out.println("writeinquireOk()");
+		model.addAttribute("request", request);
+		inquireService.insertInquire(model);
+		return "inquire";
+	}
+
 	@RequestMapping("boardWrite")
 	public String boardWrite() {
 		return "editor";
 	}
-	
+
 	@RequestMapping("writeOk")
 	public String writeOk(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
 		boardService.insertBoard(model);
 		return board(request, model);
 	}
-	
+
 	@RequestMapping("board")
 	public String board(HttpServletRequest request, Model model) {
 		List<BoardDTO> boardlist = boardService.boardList();
 		model.addAttribute("request", request);
 		model.addAttribute("boardlist", boardlist);
-		
+
 		return "board";
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "getYoutubeList", method=RequestMethod.GET, produces = "text/plain;charset=UTF-8")
+	@RequestMapping(value = "getYoutubeList", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
 	public String getYoutubeList(HttpServletRequest request) {
 		LocalDateTime currentDateTime = LocalDateTime.now();
 		Duration duration = Duration.between(youtubeRefDateTime, currentDateTime);
 
-		if(duration.getSeconds() > 24 * 60 * 60) youtubeService.saveRemoteYoutebeList();
+		if (duration.getSeconds() > 24 * 60 * 60)
+			youtubeService.saveRemoteYoutebeList();
 
 		Integer start = Integer.parseInt(request.getParameter("start"));
 		Integer bound = Integer.parseInt(request.getParameter("bound"));

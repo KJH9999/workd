@@ -87,6 +87,11 @@ section.notice {
 	text-align: center;
 }
 
+.board-table .th-title {
+	width: 100px;
+	text-align: center;
+}
+
 .board-table .th-num {
 	width: 100px;
 	text-align: center;
@@ -100,7 +105,7 @@ section.notice {
 }
 
 .board-table .th-date {
-	width: 200px;
+	width: 550px;
 }
 
 .board-table th, .board-table td {
@@ -113,7 +118,7 @@ section.notice {
 }
 
 .board-table tbody th {
-	padding-left: 28px;
+	padding-left: 58px;
 	padding-right: 14px;
 	border-top: 1px solid #E7E7E7;
 	text-align: left;
@@ -200,72 +205,53 @@ section.notice {
 	width: 1px;
 	height: 1px;
 }
+.th-text{
+	text-align: center;
+}
+#btn-list{
+margin-top: 5px;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
-
 	<hr>
-	<%
-		Object s_email = session.getAttribute("email");
-		String email = (String) s_email;
-	%>
 	<section class="notice">
 		<div class="page-title">
 			<div class="container">
 				<h3>게시글</h3>
 			</div>
 		</div>
-		<!-- board seach area -->
-		<div id="board-search">
-			<div class="container">
-				<div class="search-window">
-					<form action="">
-						<div class="search-wrap">
-							<label for="search" class="blind">공지사항 내용 검색</label> <input
-								id="search" type="search" name="" placeholder="검색어를 입력해주세요."
-								value="">
-							<button type="submit" class="btn btn-dark">검색</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- board list area -->
-		<div id="board-list">
-			<div class="container">
-				<table class="board-table">
-					<thead>
-						<tr>
-							<th scope="col" class="th-num">번호</th>
-							<th scope="col" class="th-title">제목</th>
-							<th scope="col" class="th-author">작성자</th>
-							<th scope="col" class="th-author">등록일</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${boardlist}" var="boardlist">
+		<!-- board Content area -->
+		<c:forEach items="${boardlist}" var="boardlist">
+			<div id="board-list">
+				<div class="container">
+					<table class="board-table">
+						<thead>
 							<tr>
-								<td>${boardlist.idx}</td>
-								<td><a href="contentView.do?idx=${boardlist.idx}">
-										${boardlist.title}</a></td>
-								<td>${boardlist.email}</td>
-								<td>${boardlist.at_time}</td>
+								<th class="th-text" colspan="3">${boardlist.title}</th>
 							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+						</thead>
+							<tr>
+								<th scope="col" class="th-author">작성자&nbsp;&nbsp;&nbsp;${boardlist.email}</th>
+								<th scope="col" class="th-date">등록일&nbsp;&nbsp;&nbsp;${boardlist.at_time}</th>
+								<th scope="col" class="th-author">조회수&nbsp;&nbsp;&nbsp;${boardlist.hit}</th>
+							</tr>
+						<tbody>
+							<tr>
+								<td>내용</td>
+								<td style="text-align: left;">${boardlist.content}</td>
+							</tr>
+
+						</tbody>
+					</table>
+
+				</div>
+					<form action="board">
+						<button type="submit" class="btn btn-dark" id="btn-list">목록</button>
+					</form>
 			</div>
-			<%
-				if (s_email != null) {
-			%>
-			<form action="boardWrite">
-				<button type="submit" class="btn btn-dark">글쓰기</button>
-			</form>
-			<%
-				}
-			%>
-		</div>
+		</c:forEach>
 	</section>
 </body>
 </html>

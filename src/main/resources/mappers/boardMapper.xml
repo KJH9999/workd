@@ -10,7 +10,7 @@
 	
 	<insert id="insertBoard">
 		INSERT INTO board(email, title, content, hit)
-		VALUES(#{email}, #{title}, #{content},#{hit})
+		VALUES(#{email}, #{title}, #{content},0)
 	</insert>
 	
 	<update id="increaseView">

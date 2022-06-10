@@ -94,7 +94,7 @@ public class UserController {
 	
 	@RequestMapping("boardWrite")
 	public String boardWrite() {
-		return "editor";
+		return "User/boardWrite";
 	}
 	
 	@RequestMapping("writeOk")
@@ -112,6 +112,8 @@ public class UserController {
 		
 		return "board";
 	}
+	
+	
 
 	@ResponseBody
 	@RequestMapping(value = "getYoutubeList", method=RequestMethod.GET, produces = "text/plain;charset=UTF-8")
@@ -140,4 +142,6 @@ public class UserController {
 		
 		return "contentView";
 	}
+	
+	
 }

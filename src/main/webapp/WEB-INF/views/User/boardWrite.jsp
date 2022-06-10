@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<%@ include file="./common/common.jsp"%>
+<%@ include file="../common/common.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +37,7 @@ section.notice {
 	/*   padding-right: 124px; */
 	margin: 0 auto;
 	width: 80%;
-	max-width: 564px;
+	max-width: 800px;
 }
 
 #board-search .search-window .search-wrap input {
@@ -217,55 +217,28 @@ section.notice {
 			</div>
 		</div>
 		<!-- board seach area -->
+
 		<div id="board-search">
 			<div class="container">
 				<div class="search-window">
-					<form action="">
+					<form action=writeOk>
 						<div class="search-wrap">
-							<label for="search" class="blind">공지사항 내용 검색</label> <input
-								id="search" type="search" name="" placeholder="검색어를 입력해주세요."
-								value="">
-							<button type="submit" class="btn btn-dark">검색</button>
+								
+							<h4>EMAIL(작성자) : <%=email%></h4> 
+							<input type="hidden" name="email" value="<%=email%>">
+							<input id="title" type="search" name="title"
+								placeholder="제목을 입력해주세요." value="" style="margin:10">
+							<textarea id="content" name="content"
+								placeholder="내용을 입력해주세요."style="height:350px;width:800px;margin:10;padding: 7px 14px">
+							</textarea>
 						</div>
+				
+							<button type="submit" class="btn btn-dark">글쓰기</button>
 					</form>
 				</div>
 			</div>
 		</div>
-		<!-- board list area -->
-		<div id="board-list">
-			<div class="container">
-				<table class="board-table">
-					<thead>
-						<tr>
-							<th scope="col" class="th-num">번호</th>
-							<th scope="col" class="th-title">제목</th>
-							<th scope="col" class="th-author">작성자</th>
-							<th scope="col" class="th-author">등록일</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${boardlist}" var="boardlist">
-							<tr>
-								<td>${boardlist.idx}</td>
-								<td><a href="contentView.do?idx=${boardlist.idx}">
-										${boardlist.title}</a></td>
-								<td>${boardlist.email}</td>
-								<td>${boardlist.at_time}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-			<%
-				if (s_email != null) {
-			%>
-			<form action="boardWrite">
-				<button type="submit" class="btn btn-dark">글쓰기</button>
-			</form>
-			<%
-				}
-			%>
-		</div>
+
 	</section>
 </body>
 </html>

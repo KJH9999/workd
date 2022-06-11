@@ -1,0 +1,36 @@
+.count-line{
+		display: flex;
+}
+.graph{
+	display: flex;
+}
+.ratio {
+	padding-top: 20px;
+}
+
+.ratio li {
+	float: left;
+	position: relative;
+	width: 100px;
+	height: 300px;
+	margin-right: 10px;
+	list-style: none
+}
+
+.ratio div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background:#2222;
+	font-size: 0
+}
+
+.ratio em {
+	position: absolute;
+	top: -20px;
+	width: 100%;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center
+}

@@ -8262,7 +8262,7 @@ supports ((position:-webkit-sticky ) or (position:sticky )){ .
 }
 
 .mb-4, .my-4 {
-	margin-bottom: 1.5rem !important
+	margin-bottom: 1.5rem;
 }
 
 .ml-4, .mx-4 {
@@ -9987,7 +9987,14 @@ a:focus {
 }
 
 #wrapper #content-wrapper #content {
-	flex: 1 0 auto
+	flex: 1 0 auto;
+	display : flex;
+	flex-direction: column;
+}
+
+#content-wrapper {
+	height : 850px !important;
+	display : inline-block !important;
 }
 
 .container, .container-fluid, .container-lg, .container-md,

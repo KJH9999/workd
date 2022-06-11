@@ -16,10 +16,13 @@
 <link rel='stylesheet' type="text/css"
 	href="${pageContext.request.contextPath}/css/admin/sb-admin-2.min.css" />
 <meta charset="UTF-8">
+<style>
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 
+	<!-- <div id="wrapper"> -->
 	<ul
 		class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 		id="accordionSidebar">
@@ -28,9 +31,7 @@
 		<a herf="adminmain"
 			class="sidebar-brand d-flex align-items-center justify-content-center"
 			href="adminmain.jsp">
-			<div class="sidebar-brand-icon rotate-n-15">
-				<i class="fas fa-laugh-wink"></i>
-			</div>
+
 			<div class="sidebar-brand-text mx-3">workd</div>
 		</a>
 
@@ -46,12 +47,20 @@
 		<div class="sidebar-heading">회원</div>
 
 		<li class="nav-item"><a class="nav-link" href="charts.html">
-				<i class="fas fa-fw fa-chart-area"></i> <span>정보관리 </span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+</svg> <span>정보관리 </span>
 		</a></li>
 
 
 		<li class="nav-item"><a class="nav-link" href="charts.html">
-				<i class="fas fa-fw fa-chart-area"></i> <span>랭킹 </span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+</svg> <span>랭킹 </span>
 		</a></li>
 
 		<hr class="sidebar-divider my-0">
@@ -65,12 +74,20 @@
 		<div class="sidebar-heading">게시글관리</div>
 
 		<li class="nav-item"><a class="nav-link" href="charts.html">
-				<i class="fas fa-fw fa-chart-area"></i> <span>게시판 </span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+</svg> <span>게시판 </span>
 		</a></li>
 
 
 		<li class="nav-item"><a class="nav-link" href="charts.html">
-				<i class="fas fa-fw fa-chart-area"></i> <span>문의사항 </span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+</svg> <span>문의사항 </span>
 		</a></li>
 
 		<hr class="sidebar-divider my-0">
@@ -83,14 +100,19 @@
 		<div class="sidebar-heading">수익</div>
 
 		<li class="nav-item"><a class="nav-link" href="charts.html">
-				<i class="fas fa-fw fa-chart-area"></i> <span>총 수익 </span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+</svg> <span>총 수익 </span>
 		</a></li>
 
-
-
-
 		<li class="nav-item"><a class="nav-link" href="charts.html">
-				<i class="fas fa-fw fa-chart-area"></i> <span>등록내역 </span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+</svg> <span>등록내역 </span>
 		</a></li>
 </body>
 </html>

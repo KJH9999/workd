@@ -74,7 +74,6 @@ public class UserController {
 		System.out.println(ck);
 		if (ck != 0) {
 			session.setAttribute("email", email);
-			System.out.println("�뜝�럡�돪�뜝�럥占썩댙�삕�땻類㏃삕占쎌젧O");
 			return "home";
 		} else {
 			model.addAttribute("isLoginFail", true);
@@ -105,6 +104,8 @@ public class UserController {
 	public String inquire(HttpServletRequest request, Model model) {
 		List<BoardDTO> myinquire = inquireService.myinquire(request.getParameter("email"));
 		model.addAttribute("myinquire", myinquire);
+		return "inquire";
+	}
 
 	@RequestMapping("writeinquireOk")
 	public String writeinquireOk(HttpServletRequest request, Model model) {

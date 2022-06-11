@@ -20,4 +20,4 @@ FullCalendar.globalLocales.push(function () {
 
   return ko;
 
-}());
+}()); 

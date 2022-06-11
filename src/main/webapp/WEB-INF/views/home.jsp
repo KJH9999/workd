@@ -228,6 +228,7 @@
 				<span>Ranking</span>
 				<div class="menu ranking-menu">
 					<ul>
+					<!-- 	<li onclick="showCategory('total');">3대</li> -->
 						<li onclick="showCategory('squats');">스쿼트</li>
 						<li onclick="showCategory('benchPress');">벤치프레스</li>
 						<li onclick="showCategory('deadLift');">데드리프트</li>
@@ -235,6 +236,38 @@
 					</ul>
 				</div>
 			</div>
+	<%-- 			<div class="ranking-wrapper">
+				<div id="total" class="ranking-wrap">
+					<div class="title">
+						<span> 3대 </span>
+					</div>
+					<div class="ranking-title">
+						<div class="order">
+							<span> 순위 </span>
+						</div>
+						<div class="name">
+							<span> 이름 </span>
+						</div>
+						<div class="score">
+							<span> 점수 </span>
+						</div>
+					</div>
+					<c:forEach var="totallist" items="${totallist}" varStatus="status">
+						<div class="ranking">
+							<div class="order">
+								<span> ${status.count} </span>
+							</div>
+							<div class="name">
+								<span> ${totallist.name} </span>
+							</div>
+							<div class="score">
+								<span> ${totallist.total} </span>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+			</div> --%>
+			
 			<div class="ranking-wrapper">
 				<div id="squats" class="ranking-wrap">
 					<div class="title">
@@ -251,40 +284,23 @@
 							<span> 점수 </span>
 						</div>
 					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 1 </span>
+					<c:forEach var="squatlist" items="${squatlist}" varStatus="status">
+						<div class="ranking">
+							<div class="order">
+								<span> ${status.count} </span>
+							</div>
+							<div class="name">
+								<span> ${squatlist.name} </span>
+							</div>
+							<div class="score">
+								<span> ${squatlist.squat} </span>
+							</div>
 						</div>
-						<div class="name">
-							<span> 장동건 </span>
-						</div>
-						<div class="score">
-							<span> 100 </span>
-						</div>
-					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 2 </span>
-						</div>
-						<div class="name">
-							<span> 이재강 </span>
-						</div>
-						<div class="score">
-							<span> 99 </span>
-						</div>
-					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 3 </span>
-						</div>
-						<div class="name">
-							<span> 김재호 </span>
-						</div>
-						<div class="score">
-							<span> 98 </span>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
+			</div>
+
+			<div class="ranking-wrapper">
 				<div id="benchPress" class="ranking-wrap">
 					<div class="title">
 						<span> 벤치프레스 </span>
@@ -300,90 +316,54 @@
 							<span> 점수 </span>
 						</div>
 					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 1 </span>
+					<c:forEach var="benchlist" items="${benchlist}" varStatus="status">
+						<div class="ranking">
+							<div class="order">
+								<span> ${status.count} </span>
+							</div>
+							<div class="name">
+								<span> ${benchlist.name} </span>
+							</div>
+							<div class="score">
+								<span> ${benchlist.bench} </span>
+							</div>
 						</div>
-						<div class="name">
-							<span> A </span>
+					</c:forEach>
+				</div>
+				</div>
+				
+
+				<div class="ranking-wrapper">
+					<div id="deadLift" class="ranking-wrap">
+						<div class="title">
+							<span> 데드리프트 </span>
 						</div>
-						<div class="score">
-							<span> 100 </span>
+						<div class="ranking-title">
+							<div class="order">
+								<span> 순위 </span>
+							</div>
+							<div class="name">
+								<span> 이름 </span>
+							</div>
+							<div class="score">
+								<span> 점수 </span>
+							</div>
 						</div>
-					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 2 </span>
-						</div>
-						<div class="name">
-							<span> B </span>
-						</div>
-						<div class="score">
-							<span> 99 </span>
-						</div>
-					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 3 </span>
-						</div>
-						<div class="name">
-							<span> C </span>
-						</div>
-						<div class="score">
-							<span> 98 </span>
-						</div>
+						<c:forEach var="deadlist" items="${deadlist}" varStatus="status">
+							<div class="ranking">
+								<div class="order">
+									<span> ${status.count} </span>
+								</div>
+								<div class="name">
+									<span> ${deadlist.name} </span>
+								</div>
+								<div class="score">
+									<span> ${deadlist.dead} </span>
+								</div>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
-				<div id="deadLift" class="ranking-wrap">
-					<div class="title">
-						<span> 데드리프트 </span>
-					</div>
-					<div class="ranking-title">
-						<div class="order">
-							<span> 순위 </span>
-						</div>
-						<div class="name">
-							<span> 이름 </span>
-						</div>
-						<div class="score">
-							<span> 점수 </span>
-						</div>
-					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 1 </span>
-						</div>
-						<div class="name">
-							<span> A </span>
-						</div>
-						<div class="score">
-							<span> 100 </span>
-						</div>
-					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 2 </span>
-						</div>
-						<div class="name">
-							<span> B </span>
-						</div>
-						<div class="score">
-							<span> 99 </span>
-						</div>
-					</div>
-					<div class="ranking">
-						<div class="order">
-							<span> 3 </span>
-						</div>
-						<div class="name">
-							<span> C </span>
-						</div>
-						<div class="score">
-							<span> 98 </span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</article>
 		<article>
 			<div class="title">

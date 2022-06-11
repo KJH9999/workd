@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.ex.dto.BoardDTO;
+import com.spring.ex.dto.RankingDTO;
 import com.spring.ex.dto.UserDTO;
 import com.spring.ex.service.BoardService;
 import com.spring.ex.service.InquireService;
@@ -44,6 +45,14 @@ public class UserController {
 
 	@RequestMapping("home")
 	public String home(Model model) {
+		List<RankingDTO> benchlist = rankingService.benchlist();
+		List<RankingDTO> deadlist = rankingService.deadlist();
+		List<RankingDTO> squatlist = rankingService.squatlist();
+		List<RankingDTO> totallist = rankingService.totallist();
+		model.addAttribute("benchlist", benchlist);
+		model.addAttribute("deadlist", deadlist);
+		model.addAttribute("squatlist", squatlist);
+		model.addAttribute("totallist", totallist);
 		return "home";
 	}
 
@@ -65,7 +74,7 @@ public class UserController {
 		System.out.println(ck);
 		if (ck != 0) {
 			session.setAttribute("email", email);
-			System.out.println("占쎄쉭占쎈�∽옙苑뺧옙�젟O");
+			System.out.println("�뜝�럡�돪�뜝�럥占썩댙�삕�땻類㏃삕占쎌젧O");
 			return "home";
 		} else {
 			model.addAttribute("isLoginFail", true);
@@ -93,7 +102,7 @@ public class UserController {
 	}
 
 	@RequestMapping("inquire")
-	public String inquire(@RequestParam String) {
+	public String inquire(@RequestParam String email) {
 		return "User/inquire";
 	}
 
@@ -147,7 +156,7 @@ public class UserController {
 	public String contentview(@RequestParam int idx, Model model) {
 		System.out.println("contentView");
 		System.out.println("C :" + idx);
-		//조회수
+		//議고쉶�닔
 		boardService.increaseViewcnt(idx);
 
 		List<BoardDTO> boardlist = boardService.read(idx);

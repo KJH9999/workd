@@ -208,6 +208,13 @@ main {
 	justify-content: space-between;
 }
 
+@media screen and (min-width: 1020px) and (max-width: 1540px) {
+	.youtube-wrapper .video-wrap {
+		display : flex;
+		justify-content : center;
+	}
+}
+
 .youtube-wrapper .video {
 	margin: 0 20px;
 }
@@ -216,6 +223,11 @@ main {
 	.youtube-wrapper .video {
 		margin-bottom: 20px;
 	}
+}
+
+.ranking-menu>ul>li:first-child {
+	background-color : black;
+	color : white;
 }
 
 .ranking-menu>ul>li:hover {
@@ -238,6 +250,10 @@ main {
 	-webkit-box-shadow: 0px 0px 29px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 0px 0px 29px 3px rgba(0, 0, 0, 0.5);
 	margin-bottom: 20px;
+}
+
+.ranking-wrapper:nth-of-type(2)~.ranking-wrapper > .ranking-wrap {
+	display : none;
 }
 
 .ranking-wrap>.ranking-title {
@@ -331,6 +347,17 @@ main {
 	display: inline-block;
 }
 
+.ranking-wrap .date {
+	flex : 1 0 auto;
+	min-width: 100px;
+}
+
+.ranking-wrap .date>span {
+	width: 100px;
+	text-align: center;
+	display : inline-block;
+}
+
 .fc-prev-button, .fc-next-button {
 	color: white !important;
 	background-color: black !important;
@@ -338,7 +365,8 @@ main {
 }
 
 .fc-today-button {
-	cursor: pointer !important; color : white !important;
+	cursor: pointer !important;
+	color: white !important;
 	font-weight: bold !important;
 	background-color: black !important;
 	border: 3px solid black !important;
@@ -362,7 +390,7 @@ main {
 }
 
 #calendar h2, #calendar a {
-	font-family : 'EarlyFontDiary' !important;
+	font-family: 'EarlyFontDiary' !important;
 }
 
 .memo-wrapper {
@@ -373,7 +401,7 @@ main {
 	align-items: center;
 	justify-content: center;
 	margin-left: 30px;
-	border-radius : 10px;
+	border-radius: 10px;
 }
 
 @media screen and (max-width: 1320px) {
@@ -406,9 +434,9 @@ main {
 	font-size: 40px;
 }
 
-.memo-wrap .list > ul > li {
-	font-family : 'EarlyFontDiary';
-	font-size  : 20px;
+.memo-wrap .list>ul>li {
+	font-family: 'EarlyFontDiary';
+	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
@@ -418,11 +446,12 @@ main {
 }
 
 .map-wrapper {
+	
 }
 
 .map-wrap {
-	display : flex;
-	flex-direction : column;
+	display: flex;
+	flex-direction: column;
 }
 
 #map {
@@ -432,40 +461,39 @@ main {
 }
 
 .text-wrapper {
-
+	
 }
 
 .text-wrap {
-	display : flex;
-	padding : 10px 0px;
+	display: flex;
+	padding: 10px 0px;
 	border-bottom: 1px solid #ebebeb
 }
 
 .text-wrap>div:first-child {
-	flex : 0 0 auto;
+	flex: 0 0 auto;
 	margin-right: 20px;
 	width: 300px;
-	padding : 0 30px;
+	padding: 0 30px;
 	display: flex;
-	justify-content : center;
-	
+	justify-content: center;
 }
 
 .text-wrap>div:last-child {
 	flex: 1 0 auto;
-	color : #999;
+	color: #999;
 	display: flex;
-	justify-content : left;
+	justify-content: left;
 }
 
 .text-wrap>div span {
-	font-size : 15px;
+	font-size: 15px;
 	font-weight: 600;
 	padding: 10px 0;
 }
 
 .text-wrap .time>ul>li {
-	padding : 10px 0;
+	padding: 10px 0;
 }
 
 .text-wrap .time>ul:first-child {
@@ -473,5 +501,5 @@ main {
 }
 
 .text-wrap .time>ul:last-child span {
-	color : black;
+	color: black;
 }

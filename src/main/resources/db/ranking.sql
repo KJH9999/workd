@@ -1,0 +1,13 @@
+CREATE TABLE `ranking` (
+	`email` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
+	`name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`bench` INT(11) NULL DEFAULT NULL,
+	`dead` INT(11) NULL DEFAULT NULL,
+	`squat` INT(11) NULL DEFAULT NULL,
+	`total` INT(11) NULL DEFAULT NULL,
+	`regist` DATE NULL DEFAULT NULL,
+	PRIMARY KEY (`email`) USING BTREE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;

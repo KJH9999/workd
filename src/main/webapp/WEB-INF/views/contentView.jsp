@@ -6,210 +6,84 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel='stylesheet' type="text/css"
+	href="${pageContext.request.contextPath}/css/common/global.css" />
 <style>
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+.notice {
+	padding: 30px;
 }
 
-section.notice {
-	padding: 80px 0;
-}
-
-.page-title {
-	margin-bottom: 60px;
-}
-
-.page-title h3 {
-	font-size: 28px;
-	color: #333333;
-	font-weight: 400;
+.notice>.page-title {
 	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 20px 0px;
+	border-bottom: 1px solid lightgray;
+	margin-bottom: 20px;
 }
 
-#board-search .search-window {
-	padding: 15px 0;
-	background-color: #F9F7F9;
+.btn-wrapper {
+	display: flex;
+	justify-content: flex-end;
 }
 
-#board-search .search-window .search-wrap {
-	position: relative;
-	/*   padding-right: 124px; */
-	margin: 0 auto;
-	width: 80%;
-	max-width: 564px;
-}
-
-#board-search .search-window .search-wrap input {
-	height: 40px;
-	width: 100%;
-	font-size: 14px;
-	padding: 7px 14px;
-	border: 1px solid #ccc;
-}
-
-#board-search .search-window .search-wrap input:focus {
-	border-color: #333;
-	outline: 0;
-	border-width: 1px;
-}
-
-#board-search .search-window .search-wrap .btn {
-	position: absolute;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 108px;
-	padding: 0;
-	font-size: 16px;
-}
-
-.board-table {
-	font-size: 13px;
-	width: 100%;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-}
-
-.board-table a {
-	color: #333;
-	display: inline-block;
-	line-height: 1.4;
-	word-break: break-all;
-	vertical-align: middle;
-}
-
-.board-table a:hover {
-	text-decoration: underline;
-}
-
-.board-table th {
-	text-align: center;
-}
-
-.board-table .th-title {
-	width: 100px;
-	text-align: center;
-}
-
-.board-table .th-num {
-	width: 100px;
-	text-align: center;
-}
-
-.board-table .th-author {
-	width: 200px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	word-wrap: break-word;
-}
-
-.board-table .th-date {
-	width: 550px;
-}
-
-.board-table th, .board-table td {
-	padding: 14px 0;
-}
-
-.board-table tbody td {
-	border-top: 1px solid #E7E7E7;
-	text-align: center;
-}
-
-.board-table tbody th {
-	padding-left: 58px;
-	padding-right: 14px;
-	border-top: 1px solid #E7E7E7;
-	text-align: left;
-}
-
-.board-table tbody th p {
-	display: none;
-}
-
-.btn {
-	display: inline-block;
-	padding: 0 30px;
-	font-size: 15px;
-	font-weight: 400;
-	background: transparent;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	-ms-touch-action: manipulation;
-	touch-action: manipulation;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	border: 1px solid transparent;
-	text-transform: uppercase;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.btn-dark {
-	background: #555;
-	color: #fff;
-}
-
-.btn-dark:hover, .btn-dark:focus {
-	background: #373737;
-	border-color: #373737;
-	color: #fff;
-}
-
-.btn-dark {
-	background: #555;
-	color: #fff;
-}
-
-.btn-dark:hover, .btn-dark:focus {
-	background: #373737;
-	border-color: #373737;
-	color: #fff;
-}
-/* reset */
-* {
-	list-style: none;
-	text-decoration: none;
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-.clearfix:after {
-	content: '';
-	display: block;
-	clear: both;
+.btn-wrapper>button {
+	width: 150px;
+	height: 50px;
+	background: 0 0;
+	outline: none; border : 3px solid black;
+	border-radius: 5px;
+	border: 3px solid black;
 }
 
 .container {
-	width: 1100px;
-	margin: 0 auto;
+	border: 3px solid lightgray;
+	margin-bottom: 15px;
 }
 
-.blind {
-	position: absolute;
+.container>div {
+	margin-bottom: 10px;
+	padding: 10px
+}
+
+.title {
+	font-size: 35px;
+	font-weight: bold;
+	font-family: 'EarlyFontDiary';
+	display: flex;
+}
+
+.title>span {
+	display: inline-block;
+	width: 100%;
 	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	margin: -1px;
-	width: 1px;
-	height: 1px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-bottom: 10px;
+	border-bottom: 1px solid lightgray;
 }
-.th-text{
-	text-align: center;
+
+.title>span:first-child {
+	flex: 0 0 100px;
 }
-#btn-list{
-margin-top: 5px;
+
+.author {
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'GimpoGothic';
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+}
+
+.content {
+	min-height: 500px;
 }
 </style>
 </head>
@@ -218,38 +92,27 @@ margin-top: 5px;
 	<hr>
 	<section class="notice">
 		<div class="page-title">
-			<div class="container">
-				<h3>게시글</h3>
-			</div>
+			<span>게시글</span>
 		</div>
 		<!-- board Content area -->
 		<c:forEach items="${boardlist}" var="boardlist">
 			<div id="board-list">
 				<div class="container">
-					<table class="board-table">
-						<thead>
-							<tr>
-								<th class="th-text" colspan="3">${boardlist.title}</th>
-							</tr>
-						</thead>
-							<tr>
-								<th scope="col" class="th-author">작성자&nbsp;&nbsp;&nbsp;${boardlist.email}</th>
-								<th scope="col" class="th-date">등록일&nbsp;&nbsp;&nbsp;${boardlist.at_time}</th>
-								<th scope="col" class="th-author">조회수&nbsp;&nbsp;&nbsp;${boardlist.hit}</th>
-							</tr>
-						<tbody>
-							<tr>
-								<td>내용</td>
-								<td style="text-align: left;">${boardlist.content}</td>
-							</tr>
-
-						</tbody>
-					</table>
+					<div class="title">
+						<span> 제목 :&nbsp;</span> <span> ${boardlist.title} </span>
+					</div>
+					<div class="author">
+						<span>작성자&nbsp;&nbsp;&nbsp;${boardlist.email}</span> <span>조회수&nbsp;&nbsp;&nbsp;${boardlist.hit}</span>
+					</div>
+					<div class="info">
+						<span></span> <span>등록일&nbsp;&nbsp;&nbsp;${boardlist.at_time}</span>
+					</div>
+					<div class="content">${boardlist.content}</div>
 
 				</div>
-					<form action="board">
-						<button type="submit" class="btn btn-dark" id="btn-list">목록</button>
-					</form>
+				<form action="board" class="btn-wrapper">
+					<button type="submit" class="btn btn-dark" id="btn-list">목록</button>
+				</form>
 			</div>
 		</c:forEach>
 	</section>

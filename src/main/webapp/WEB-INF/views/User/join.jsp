@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/css/pages/join.css">
 </head>
 <body>
-	<form action="">
+	<form action="joinOk" onsubmit="onSubmit();">
 
 		<!-- wrapper -->
 		<div id="wrapper">
@@ -24,7 +24,7 @@
 					<h3 class="join_title">
 						<label for="id">아이디</label>
 					</h3>
-					<span class="box int_id"> <input type="text" id="id"
+					<span class="box int_id"> <input type="text" id="id" name="email"
 						class="int" maxlength="20"> <span class="step_url"></span>
 					</span> <span class="error_next_box"></span>
 				</div>
@@ -35,7 +35,7 @@
 						<label for="pswd1">비밀번호</label>
 					</h3>
 					<span class="box int_pass"> <input type="password"
-						id="pswd1" class="int" maxlength="20"> <span id="alertTxt">사용불가</span>
+						id="pswd1" name="pw" class="int" maxlength="20"> <span id="alertTxt">사용불가</span>
 
 					</span> <span class="error_next_box"></span>
 				</div>
@@ -56,7 +56,7 @@
 					<h3 class="join_title">
 						<label for="name">이름</label>
 					</h3>
-					<span class="box int_name"> <input type="text" id="name"
+					<span class="box int_name"> <input type="text" id="name" name="name"
 						class="int" maxlength="20">
 					</span> <span class="error_next_box"></span>
 				</div>
@@ -66,7 +66,8 @@
 					<h3 class="join_title">
 						<label for="yy">생년월일</label>
 					</h3>
-
+					
+					<input id="birth_date" name="birth_date" type="hidden" />
 					<div id="bir_wrap">
 						<!-- BIRTH_YY -->
 						<div id="bir_yy">
@@ -111,11 +112,11 @@
 					<h3 class="join_title">
 						<label for="gender">성별</label>
 					</h3>
-					<span class="box gender_code"> <select id="gender"
+					<span class="box gender_code"> <select id="gender" name="gender"
 						class="sel">
 							<option>성별</option>
-							<option value="M">남자</option>
-							<option value="F">여자</option>
+							<option value="남자">남자</option>
+							<option value="여자">여자</option>
 					</select>
 					</span> <span class="error_next_box">필수 정보입니다.</span>
 				</div>
@@ -127,7 +128,7 @@
 					<h3 class="join_title">
 						<label for="phoneNo">휴대전화</label>
 					</h3>
-					<span class="box int_mobile"> <input type="tel" id="mobile"
+					<span class="box int_mobile"> <input type="tel" id="mobile" name="number"
 						class="int" maxlength="16" placeholder="전화번호 입력">
 					</span> <span class="error_next_box"></span>
 				</div>
@@ -135,7 +136,7 @@
 
 				<!-- JOIN BTN-->
 				<div class="btn_area">
-					<button type="button" id="btnJoin">
+					<button type="submit" id="btnJoin" s>
 						<span>가입하기</span>
 					</button>
 				</div>

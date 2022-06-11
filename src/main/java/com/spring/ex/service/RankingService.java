@@ -22,5 +22,7 @@ public interface RankingService {
 
 	public List<RankingDTO> totallist();
 
+	public void inputTime(Model model);
+
 
 }

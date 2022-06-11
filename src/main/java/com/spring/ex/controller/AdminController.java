@@ -57,7 +57,7 @@ public class AdminController {
 		return "admin/user/userA";
 	}
 	
-	//��ŷ
+	//占쏙옙킹
 	@RequestMapping("rankA")
 	public String rankA(Model model) {
 		System.out.println("rankA()");
@@ -77,20 +77,19 @@ public class AdminController {
 	}
 
 	
-	//���Ͱ���(���,ȯ��,�絵,�������)
+	//占쏙옙占싶곤옙占쏙옙(占쏙옙占,환占쏙옙,占썹도,占쏙옙占쏙옙占쏙옙占)
 	@RequestMapping("incomeA")
 	public String incomeA(Model model) {
 		System.out.println("incomeA()");
 		return "admin/income/incomeA";
 	}
-	
-	//�Խ��� ����(�Խñ۰���,���ǻ��װ���,Ķ��������)
+
 	@RequestMapping("boardA")
 	public String boardA(Model model) {
 		System.out.println("admin()");
 		return "admin/board/boardA";
 	}
-	//���ǻ���
+	//占쏙옙占실삼옙占쏙옙
 	@RequestMapping("inquireA")
 	public String inquireA(Model model) {
 		System.out.println("inquireA()");

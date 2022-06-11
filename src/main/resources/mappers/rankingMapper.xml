@@ -16,27 +16,33 @@
 	</update>
 	
 	<select id="benchlist" resultType="RankingDTO">
-		SELECT name,bench
+		SELECT name,regist,bench
 		FROM ranking
 		ORDER BY bench DESC LIMIT 3
 	</select>
 	
 	<select id="deadlist" resultType="RankingDTO">
-		SELECT name,dead
+		SELECT name,regist,dead
 		FROM ranking
 		ORDER BY dead DESC LIMIT 3
 	</select>
 	
 	<select id="squatlist" resultType="RankingDTO">
-		SELECT name,squat
+		SELECT name,regist,squat
 		FROM ranking
 		ORDER BY squat DESC LIMIT 3
 	</select>
 	
 	<select id="totallist" resultType="RankingDTO">
-		SELECT name,total
+		SELECT name,regist,total
 		FROM ranking
 		ORDER BY total DESC LIMIT 3
+	</select>
+	
+	<select id="inputTime" resultType="RankingDTO">
+		UPDATE ranking 
+		set regist = NOW()
+		WHERE email =#{email}
 	</select>
 
 </mapper>

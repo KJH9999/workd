@@ -60,6 +60,17 @@ public class RankingServiceImp implements RankingService{
 	public List<RankingDTO> totallist() {
 		return rankingDAO.totallist();
 		}
+
+	@Override
+	public void inputTime(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		
+		String email = request.getParameter("email");
+		
+		rankingDAO.inputTime(email);
+		
+	}
 	
 	
 }

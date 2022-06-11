@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,24 +16,24 @@
 				<div class="sns-wrapper">
 					<div>KakaoTalk</div>
 					<div>Instagram</div>
-					<div>Naver ����</div>
+					<div>Naver 예약</div>
 				</div>
 			</div>
 			<div class="menu">
 				<div class="dropdown-wrapper">
 					<div class="dropdown">
-						<span class="text"> Ŀ�´�Ƽ </span>
+						<span class="text"> 커뮤니티 </span>
 						<ul class="list">
-							<li><a href="board">�Խ���</a></li>
-							<li>�̺�Ʈ</li>
+							<li><a href="board">게시판</a></li>
+							<li>이벤트</li>
 						</ul>
 					</div>
 					<div class="dropdown">
-						<span class="text"> �̿�ȳ� </span>
+						<span class="text"> 이용안내 </span>
 						<ul class="list">
-							<li>�ð�ǥ</li>
-							<li>��ġ</li>
-							<li>���� �ü�</li>
+							<li>시간표</li>
+							<li>위치</li>
+							<li>내부 시설</li>
 						</ul>
 					</div>
 				</div>
@@ -60,21 +60,21 @@
 							%>
 							</span>
 							<ul class="list">
-								<li>�� ����</li>
-								<li>����ϱ�</li>
+								<li>내 정보</li>
+								<li>등록하기</li>
 								<li>
 									<a href="inquire?email=<%=email%>">
-										�����ϱ�
+										문의하기
 									</a>
 								</li>
 								<li>
-									<a href="logout">�α׾ƿ�</a>
+									<a href="logout">로그아웃</a>
 								</li>
 							</ul>
 					<%
 							} else {
 					%>
-								<span class="text"> <a href="login"> �α��� </a>
+								<span class="text"> <a href="login"> 로그인 </a>
 								</span>
 					<%
 							}

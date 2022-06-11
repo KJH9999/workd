@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="../common/common.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -213,7 +213,7 @@ section.notice {
 	<section class="notice">
 		<div class="page-title">
 			<div class="container">
-				<h3>°Ô½Ã±Û</h3>
+				<h3>ê²Œì‹œê¸€</h3>
 			</div>
 		</div>
 		<!-- board seach area -->
@@ -224,16 +224,16 @@ section.notice {
 					<form action=writeOk>
 						<div class="search-wrap">
 								
-							<h4>EMAIL(ÀÛ¼ºÀÚ) : <%=email%></h4> 
+							<h4>EMAIL(ìž‘ì„±ìž) : <%=email%></h4> 
 							<input type="hidden" name="email" value="<%=email%>">
 							<input id="title" type="search" name="title"
-								placeholder="Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä." value="" style="margin:10">
+								placeholder="ì œëª©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”." value="" style="margin:10">
 							<textarea id="content" name="content"
-								placeholder="³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä."style="height:350px;width:800px;margin:10;padding: 7px 14px">
+								placeholder="ë‚´ìš©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”."style="height:350px;width:800px;margin:10;padding: 7px 14px">
 							</textarea>
 						</div>
 				
-							<button type="submit" class="btn btn-dark">±Û¾²±â</button>
+							<button type="submit" class="btn btn-dark">ê¸€ì“°ê¸°</button>
 					</form>
 				</div>
 			</div>

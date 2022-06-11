@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="./common/common.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -219,7 +219,7 @@ margin-top: 5px;
 	<section class="notice">
 		<div class="page-title">
 			<div class="container">
-				<h3>°Ô½Ã±Û</h3>
+				<h3>ê²Œì‹œê¸€</h3>
 			</div>
 		</div>
 		<!-- board Content area -->
@@ -233,13 +233,13 @@ margin-top: 5px;
 							</tr>
 						</thead>
 							<tr>
-								<th scope="col" class="th-author">ÀÛ¼ºÀÚ&nbsp;&nbsp;&nbsp;${boardlist.email}</th>
-								<th scope="col" class="th-date">µî·ÏÀÏ&nbsp;&nbsp;&nbsp;${boardlist.at_time}</th>
-								<th scope="col" class="th-author">Á¶È¸¼ö&nbsp;&nbsp;&nbsp;${boardlist.hit}</th>
+								<th scope="col" class="th-author">ì‘ì„±ì&nbsp;&nbsp;&nbsp;${boardlist.email}</th>
+								<th scope="col" class="th-date">ë“±ë¡ì¼&nbsp;&nbsp;&nbsp;${boardlist.at_time}</th>
+								<th scope="col" class="th-author">ì¡°íšŒìˆ˜&nbsp;&nbsp;&nbsp;${boardlist.hit}</th>
 							</tr>
 						<tbody>
 							<tr>
-								<td>³»¿ë</td>
+								<td>ë‚´ìš©</td>
 								<td style="text-align: left;">${boardlist.content}</td>
 							</tr>
 
@@ -248,7 +248,7 @@ margin-top: 5px;
 
 				</div>
 					<form action="board">
-						<button type="submit" class="btn btn-dark" id="btn-list">¸ñ·Ï</button>
+						<button type="submit" class="btn btn-dark" id="btn-list">ëª©ë¡</button>
 					</form>
 			</div>
 		</c:forEach>

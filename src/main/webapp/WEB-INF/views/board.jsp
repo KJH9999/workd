@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="./common/common.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -25,6 +25,10 @@ section.notice {
 	color: #333333;
 	font-weight: 400;
 	text-align: center;
+}
+
+#board-search {
+	position: relative;	
 }
 
 #board-search .search-window {
@@ -200,6 +204,17 @@ section.notice {
 	width: 1px;
 	height: 1px;
 }
+.write-btn-wrapper {
+	position: absolute;
+	top: 15px;
+	bottom: 15px;
+	right: 15px;
+}
+
+.write-btn-wrapper > button {
+	height: 100%;
+	border-radius : 5px;
+}
 </style>
 </head>
 <body>
@@ -213,7 +228,7 @@ section.notice {
 	<section class="notice">
 		<div class="page-title">
 			<div class="container">
-				<h3>°Ô½Ã±Û</h3>
+				<h3>ê²Œì‹œê¸€</h3>
 			</div>
 		</div>
 		<!-- board seach area -->
@@ -222,14 +237,23 @@ section.notice {
 				<div class="search-window">
 					<form action="">
 						<div class="search-wrap">
-							<label for="search" class="blind">°øÁö»çÇ× ³»¿ë °Ë»ö</label> <input
-								id="search" type="search" name="" placeholder="°Ë»ö¾î¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä."
+							<label for="search" class="blind">ê³µì§€ì‚¬í•­ ë‚´ìš© ê²€ìƒ‰</label> <input
+								id="search" type="search" name="" placeholder="ê²€ìƒ‰ì–´ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”."
 								value="">
-							<button type="submit" class="btn btn-dark">°Ë»ö</button>
+							<button type="submit" class="btn btn-dark">ê²€ìƒ‰</button>
 						</div>
 					</form>
 				</div>
 			</div>
+			<%
+				if (s_email != null) {
+			%>
+			<form action="boardWrite" class="write-btn-wrapper">
+				<button type="submit" class="btn btn-dark">ê¸€ì“°ê¸°</button>
+			</form>
+			<%
+				}
+			%>
 		</div>
 		<!-- board list area -->
 		<div id="board-list">
@@ -237,10 +261,10 @@ section.notice {
 				<table class="board-table">
 					<thead>
 						<tr>
-							<th scope="col" class="th-num">¹øÈ£</th>
-							<th scope="col" class="th-title">Á¦¸ñ</th>
-							<th scope="col" class="th-author">ÀÛ¼ºÀÚ</th>
-							<th scope="col" class="th-author">µî·ÏÀÏ</th>
+							<th scope="col" class="th-num">ë²ˆí˜¸</th>
+							<th scope="col" class="th-title">ì œëª©</th>
+							<th scope="col" class="th-author">ìž‘ì„±ìž</th>
+							<th scope="col" class="th-author">ë“±ë¡ì¼</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -256,15 +280,6 @@ section.notice {
 					</tbody>
 				</table>
 			</div>
-			<%
-				if (s_email != null) {
-			%>
-			<form action="boardWrite">
-				<button type="submit" class="btn btn-dark">±Û¾²±â</button>
-			</form>
-			<%
-				}
-			%>
 		</div>
 	</section>
 </body>

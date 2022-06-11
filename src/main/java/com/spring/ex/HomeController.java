@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.spring.ex.dto.BoardDTO;
+import com.spring.ex.dto.RankingDTO;
 import com.spring.ex.dto.UserDTO;
 import com.spring.ex.service.RankingService;
 import com.spring.ex.service.UserService;
@@ -44,6 +45,15 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+		
+		List<RankingDTO> benchlist = rankingService.benchlist();
+		List<RankingDTO> deadlist = rankingService.deadlist();
+		List<RankingDTO> squatlist = rankingService.squatlist();
+		List<RankingDTO> totallist = rankingService.totallist();
+		model.addAttribute("benchlist", benchlist);
+		model.addAttribute("deadlist", deadlist);
+		model.addAttribute("squatlist", squatlist);
+		model.addAttribute("totallist", totallist);
 		
 		return "home";
 	}

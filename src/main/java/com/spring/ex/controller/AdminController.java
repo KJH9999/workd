@@ -25,13 +25,31 @@ public class AdminController {
 	@Inject
 	InquireService inquireService;
 
+	
+	@RequestMapping("adminleft2")
+	public String adminleft2(Model model) {
+		System.out.println("adminleft2");
+		return "admin/adminleft2";
+	}
+	
+	@RequestMapping("adminleft")
+	public String adminleft(Model model) {
+		System.out.println("adminleft");
+		return "admin/adminleft";
+	}
+	
+	@RequestMapping("adminmain")
+	public String adminmain(Model model) {
+		System.out.println("adminmain()");
+		return "admin/adminmain";
+	}
+	
 	@RequestMapping("admin")
-	public String writeinquire(Model model) {
+	public String admin(Model model) {
 		System.out.println("admin()");
 		return "admin/admin";
 	}
 	
-	//È¸¿ø°ü¸® (Á¤º¸¼öÁ¤,·©Å·°ü¸®,ÀÎ¹Ùµğ?,°áÁ¦³»¿ª)
 	
 	@RequestMapping("userA")
 	public String userA(Model model) {
@@ -39,7 +57,7 @@ public class AdminController {
 		return "admin/user/userA";
 	}
 	
-	//·©Å·
+	//å ì™ì˜™í‚¹
 	@RequestMapping("rankA")
 	public String rankA(Model model) {
 		System.out.println("rankA()");
@@ -59,20 +77,19 @@ public class AdminController {
 	}
 
 	
-	//¼öÀÍ°ü¸®(µî·Ï,È¯ºÒ,¾çµµ,±¤°í¼öÀÍ)
+	//å ì™ì˜™å ì‹¶ê³¤ì˜™å ì™ì˜™(å ì™ì˜™å ,í™˜å ì™ì˜™,å ì¹ë„,å ì™ì˜™å ì™ì˜™å ì™ì˜™å )
 	@RequestMapping("incomeA")
 	public String incomeA(Model model) {
 		System.out.println("incomeA()");
 		return "admin/income/incomeA";
 	}
-	
-	//°Ô½ÃÆÇ °ü¸®(°Ô½Ã±Û°ü¸®, ,Ä¶¸°´õ°ü¸®)
+
 	@RequestMapping("boardA")
 	public String boardA(Model model) {
 		System.out.println("admin()");
 		return "admin/board/boardA";
 	}
-	//¹®ÀÇ»çÇ×
+	//å ì™ì˜™å ì‹¤ì‚¼ì˜™å ì™ì˜™
 	@RequestMapping("inquireA")
 	public String inquireA(Model model) {
 		System.out.println("inquireA()");

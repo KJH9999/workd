@@ -93,16 +93,17 @@ public class UserController {
 	}
 
 	@RequestMapping("inquire")
-	public String inquire(@RequestParam String) {
+	public String inquire(HttpServletRequest request, Model model) {
+		List<BoardDTO> myinquire = inquireService.myinquire(request.getParameter("email"));
+		model.addAttribute("myinquire", myinquire);
 		return "User/inquire";
 	}
 
 	@RequestMapping("writeinquireOk")
 	public String writeinquireOk(HttpServletRequest request, Model model) {
-		System.out.println("writeinquireOk()");
 		model.addAttribute("request", request);
 		inquireService.insertInquire(model);
-		return "inquire";
+		return "redirect:inquire?email="+request.getParameter("email");
 	}
 
 	@RequestMapping("boardWrite")
@@ -125,8 +126,6 @@ public class UserController {
 
 		return "board";
 	}
-	
-	
 
 	@ResponseBody
 	@RequestMapping(value = "getYoutubeList", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")

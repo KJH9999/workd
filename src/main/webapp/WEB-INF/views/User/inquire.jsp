@@ -1,5 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/common.jsp"%>
 <!DOCTYPE html>
@@ -15,8 +15,10 @@
 	width: 100%;
 	max-width: 1000px;
 	margin: 0 auto;
-	color: white; padding : 15px 0; background-color : black;
-	justify-content : flex-end;
+	color: white;
+	padding: 15px 0;
+	background-color: black;
+	justify-content: flex-end;
 	border-bottom: 1px solid black;
 	padding: 15px 0;
 	background-color: black;
@@ -160,6 +162,7 @@ form {
 	text-decoration: none;
 	font-weight: 600;
 	transition: 0.25s;
+	cursor: pointer;
 }
 
 .button-wrap>#reset {
@@ -207,23 +210,20 @@ form {
 					<div class="message-title left">
 						<span>답변</span>
 					</div>
-					<div class="message question">
-						${myinquire.answer}
-					</div>
+					<div class="message question">${myinquire.answer == null ? "답변이 완료되지 않았습니다." : myinquire.answer}</div>
 				</div>
 			</c:forEach>
 		</div>
 	</div>
-	
 	<%
 		Object s_email = session.getAttribute("email");
-		String email = (String)s_email;
+		String email = (String) s_email;
 	%>
 	<form action="writeinquireOk">
 		<div class="input-wrapper">
 			<div class="input-wrap">
 				<div>
-					<input type="hidden" name="email" value="<%=email %>"/>
+					<input type="hidden" name="email" value="<%=email%>" />
 					<textarea name="question" placeholder="문의사항을 적어주세요."></textarea>
 				</div>
 			</div>

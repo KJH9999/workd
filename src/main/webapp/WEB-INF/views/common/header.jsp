@@ -63,7 +63,7 @@
 								<li>내 정보</li>
 								<li>등록하기</li>
 								<li>
-									<a href="inquire">
+									<a href="inquire?email=<%=email%>">
 										문의하기
 									</a>
 								</li>

@@ -12,6 +12,8 @@
 	href="http://그누보드URL/js/font-awesome/css/font-awesome.min.css">
 <!-- Custom fonts for this template-->
 <link rel='stylesheet' type="text/css"
+	href="${pageContext.request.contextPath}/css/common/global.css" />
+<link rel='stylesheet' type="text/css"
 	href="${pageContext.request.contextPath}/css/admin/all.min.css" />
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -29,6 +31,10 @@
 
 .nav-item>.nav-link:nth-child(2n) {
 	margin-bottom: 16px !important;
+}
+
+main {
+	padding: 20px;
 }
 </style>
 </head>
@@ -79,8 +85,42 @@
 				</nav>
 			</div>
 			<!-- End of Content Wrapper -->
-			<main> <jsp:include page="/WEB-INF/views/admin/adrevenue.jsp" />
+			<main> 
+				<%
+			 	String subPage = request.getParameter("subPage");
+				System.out.println(subPage == "ranking");
+			 	if (subPage == null) {
+				%> <!-- 차트, 그래프 --> 
+				 <%
+				 	} else if (subPage.equals("ranking")) {
+				 %> <jsp:include page="ranking.jsp" />
+				<%
+					}
+				%>
 			</main>
+			<%-- <%
+				} else if (subPage == "userinfo" ) {
+			%>
+				<jsp:include page="">
+			<%
+				} else if (subPage == "post") {
+			%>
+				<jsp:include page="">
+			<%
+				} else if (subPage == "inquire") {
+			%>
+				<jsp:include page="">
+			<%
+				} else if (subPage == "totalIncome") {
+			%>
+				<jsp:include page="">
+			<%
+				} else if (subPage == "registerList") {
+			%>
+				<jsp:include page="">
+			<%
+				}
+			%> --%>
 
 		</div>
 		<jsp:include page="/WEB-INF/views/admin/adminleft.jsp" />

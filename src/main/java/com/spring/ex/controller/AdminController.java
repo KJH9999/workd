@@ -39,8 +39,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping("adminmain")
-	public String adminmain(Model model) {
-		System.out.println("adminmain()");
+	public String adminmain(HttpServletRequest request, Model model) {
 		return "admin/adminmain";
 	}
 	

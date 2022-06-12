@@ -80,7 +80,13 @@ public class UserController {
 			return login(model);
 		}
 	}
-
+	
+	
+	@RequestMapping("registration")
+	public String registration(Model model) {
+		return "registration";
+	}
+	
 	@RequestMapping("logout")
 	public String logout(Model model) {
 		return "User/logout";
@@ -163,5 +169,17 @@ public class UserController {
 		return "contentView";
 	}
 	
+	@RequestMapping("regist")
+	public String regist() {
+		return "User/regist";
+	}
 	
+	@RequestMapping("registOk")
+	public String registOk(HttpServletRequest request, Model model) {
+		model.addAttribute("request",request);
+		registService.regist(model);
+		registService.start(model);
+		registService.end(model);
+		return "home";
+	}
 }

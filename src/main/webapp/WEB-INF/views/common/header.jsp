@@ -61,7 +61,7 @@
 							</span>
 							<ul class="list">
 								<li>내 정보</li>
-								<li>등록하기</li>
+								<li><a href="regist">등록하기</a></li>
 								<li>
 									<a href="inquire?email=<%=email%>">
 										문의하기

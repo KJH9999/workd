@@ -4,13 +4,13 @@
 <mapper namespace="regist">
 
 	<insert id="insert">
-		INSERT INTO regist(email, name)
-		VALUES(#{email}, #{name})
+		INSERT INTO regist(email, name,pay,slct)
+		VALUES(#{email}, #{name}, 0,0)
 	</insert>
 	
 	<update id="regist">
 		UPDATE regist 
-		set pay = pay + #{pay}, slct = #{slct} 
+		set pay = pay + #{pay}, slct =slct+#{slct} 
 		WHERE email = #{email}
 	</update>
 	

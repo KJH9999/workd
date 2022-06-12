@@ -9,7 +9,7 @@
 	href="${pageContext.request.contextPath}/css/common/header.css" />
 </head>
 <body>
-	<header>
+	<header id="header">
 		<div>
 			<div class="logo-wrapper">
 				<a href="home"><img src="${pageContext.request.contextPath}/image/logo.png" /></a>
@@ -31,8 +31,24 @@
 					<div class="dropdown">
 						<span class="text"> 이용안내 </span>
 						<ul class="list">
-							<li>시간표</li>
-							<li>위치</li>
+							<%
+								String url = request.getRequestURI();
+								String regEx = "ex/(.+)";
+								Pattern pat = Pattern.compile(regEx);
+								Matcher match = pat.matcher(url);
+								System.out.println(match.groupCount());
+								if(match.groupCount() > 0) {
+							%>
+							<li><a href="#Schedule">시간표</a></li>
+							<li><a href="#Map">위치</a></li>
+							<%
+								} else {
+							%>
+							<li><a href="/ex#Schedule">시간표</a></li>
+							<li><a href="/ex#Map">위치</a></li>
+							<%
+								}
+							%>
 							<li>내부 시설</li>
 						</ul>
 					</div>

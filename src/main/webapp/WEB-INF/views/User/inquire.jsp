@@ -223,7 +223,7 @@ form {
 			<div class="input-wrap">
 				<div>
 					<input type="hidden" name="email" value="<%=email%>" />
-					<textarea name="question" placeholder="문의사항을 적어주세요."></textarea>
+					<textarea id="area" name="question" placeholder="문의사항을 적어주세요."></textarea>
 				</div>
 			</div>
 		</div>
@@ -234,5 +234,12 @@ form {
 			</div>
 		</div>
 	</form>
+	<script>
+		const resetButton = document.getElementById("reset");
+		resetButton.addEventListener("click", function() {
+			let textInput = document.getElementById('area');
+			textInput.value = ""
+		})
+	</script>
 </body>
 </html>

@@ -58,11 +58,10 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="adminmain/updateInquireAnswer", method=RequestMethod.POST) 
-	public String updateInquireAnswer(HttpServletRequest request, Model model) {
-		model.addAttribute("idx", request.getParameter("idx"));
-		model.addAttribute("answer", request.getParameter("answer").trim());
+	public String updateInquireAnswer(HttpServletRequest request, Model model)  {
+		model.addAttribute("request", request);
 		inquireService.answer(model);
-		return "redirect:adminmain/inquire";
+		return "redirect:inquire";
 	}
 	
 	

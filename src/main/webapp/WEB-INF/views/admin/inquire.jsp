@@ -1,6 +1,5 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -204,9 +203,7 @@ main {
 						<form class="answerForm" action="updateInquireAnswer"
 							 id="all${inquireList.idx}" method="post">
 							<input type="hidden" name="idx" value="${inquireList.idx}" />
-							<textarea class="answerTextArea" name="answer">
-						${inquireList.answer}
-					</textarea>
+							<textarea class="answerTextArea" name="answer">${inquireList.answer}</textarea>
 							<button type="submit">제출하기</button>
 						</form>
 					</div>
@@ -226,9 +223,7 @@ main {
 					<form class="answerForm" action="updateInquireAnswer"
 						 id="null${nullInquireList.idx}" method="post">
 						<input type="hidden" name="idx" value="${nullInquireList.idx}" />
-						<textarea class="answerTextArea" name="answer">
-					${nullInquireList.answer}
-				</textarea>
+						<textarea class="answerTextArea" name="answer">${nullInquireList.answer}</textarea>
 						<button type="submit">제출하기</button>
 					</form>
 				</c:forEach>

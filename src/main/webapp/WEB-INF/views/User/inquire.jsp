@@ -184,13 +184,13 @@ form {
 		<div class="wrap">
 			<div class="message-wrapper right">
 				<div class="message-title right">
-					<span>질문</span>
+					<span>예시 질문</span>
 				</div>
 				<div class="message answer">PT 가격은 어떻게 정해져있나요?</div>
 			</div>
 			<div class="message-wrapper left">
 				<div class="message-title left">
-					<span>답변</span>
+					<span>예시 답변</span>
 				</div>
 				<div class="message question">
 					10회 70만원 <br /> 20회 130만원<br /> 30회 190만원<br /> 으로 프로모션이 진행중에

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.ex.dto.BoardDTO;
@@ -39,7 +40,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping("adminmain")
-	public String adminmain(HttpServletRequest request, Model model) {
+	public String adminmain(HttpServletRequest request, Model model) {		
 		return "admin/adminmain";
 	}
 	
@@ -48,6 +49,22 @@ public class AdminController {
 		System.out.println("admin()");
 		return "admin/admin";
 	}
+	
+	@RequestMapping("adminmain/inquire") 
+	public String inquire(Model model) {
+		model.addAttribute("inquireList", inquireService.allinquire());
+		model.addAttribute("nullInquireList", inquireService.nullinquire());
+		return "admin/inquire";
+	}
+	
+	@RequestMapping(value="adminmain/updateInquireAnswer", method=RequestMethod.POST) 
+	public String updateInquireAnswer(HttpServletRequest request, Model model) {
+		model.addAttribute("idx", request.getParameter("idx"));
+		model.addAttribute("answer", request.getParameter("answer").trim());
+		inquireService.answer(model);
+		return "redirect:adminmain/inquire";
+	}
+	
 	
 	
 	@RequestMapping("userA")
@@ -88,29 +105,7 @@ public class AdminController {
 		System.out.println("admin()");
 		return "admin/board/boardA";
 	}
-	//占쏙옙占실삼옙占쏙옙
-	@RequestMapping("inquireA")
-	public String inquireA(Model model) {
-		System.out.println("inquireA()");
-		return "admin/board/inquire/inquireA";
-	}
-	
-	@RequestMapping("allinquire")
-	public String allinquire(Model model) {
-		System.out.println("allinquire()");
-		List<BoardDTO> allinquire = inquireService.allinquire();
-		model.addAttribute("allinquire", allinquire);
-		return "admin/board/inquire/allinquire";
-	}
-	
-	@RequestMapping("nullinquire")
-	public String nullinquire(Model model) {
-		System.out.println("nullinquire()");
-		List<BoardDTO> nullinquire = inquireService.nullinquire();
-		model.addAttribute("nullinquire", nullinquire);
-		return "admin/board/inquire/nullinquire";
-	}
-	
+		
 	@RequestMapping("answer.do")
 	public String answer(@RequestParam String question, Model model) {
 		System.out.println("answer.do()");

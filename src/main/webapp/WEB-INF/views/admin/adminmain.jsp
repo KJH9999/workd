@@ -38,7 +38,6 @@ main {
 }
 </style>
 </head>
-
 <body id="page-top">
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -85,42 +84,11 @@ main {
 				</nav>
 			</div>
 			<!-- End of Content Wrapper -->
-			<main> 
-				<%
-			 	String subPage = request.getParameter("subPage");
-				System.out.println(subPage == "ranking");
-			 	if (subPage == null) {
-				%> <!-- 차트, 그래프 --> 
-				 <%
-				 	} else if (subPage.equals("ranking")) {
-				 %> <jsp:include page="ranking.jsp" />
-				<%
-					}
-				%>
-			</main>
-			<%-- <%
-				} else if (subPage == "userinfo" ) {
-			%>
-				<jsp:include page="">
-			<%
-				} else if (subPage == "post") {
-			%>
-				<jsp:include page="">
-			<%
-				} else if (subPage == "inquire") {
-			%>
-				<jsp:include page="">
-			<%
-				} else if (subPage == "totalIncome") {
-			%>
-				<jsp:include page="">
-			<%
-				} else if (subPage == "registerList") {
-			%>
-				<jsp:include page="">
-			<%
-				}
-			%> --%>
+
+			<script
+				src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+				integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+				crossorigin="anonymous"></script> </main>
 
 		</div>
 		<jsp:include page="/WEB-INF/views/admin/adminleft.jsp" />
@@ -187,5 +155,9 @@ main {
 		src="${pageContext.request.contextPath}/js/admin/chart-pie-demo.js">
 		
 	</script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
 </body>
 </html>

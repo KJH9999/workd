@@ -46,7 +46,7 @@
 		<!-- Heading -->
 		<div class="sidebar-heading">회원</div>
 
-		<li class="nav-item"><a class="nav-link" href="charts.html">
+		<li class="nav-item"><a class="nav-link" href="adminmain/userinfo">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd"
@@ -55,7 +55,7 @@
 		</a></li>
 
 
-		<li class="nav-item"><a class="nav-link" href="charts.html">
+		<li class="nav-item"><a class="nav-link" href="adminmain/ranking">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd"
@@ -73,7 +73,7 @@
 		<!-- Heading -->
 		<div class="sidebar-heading">게시글관리</div>
 
-		<li class="nav-item"><a class="nav-link" href="charts.html">
+		<li class="nav-item"><a class="nav-link" href="adminmain/post">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd"
@@ -82,7 +82,7 @@
 		</a></li>
 
 
-		<li class="nav-item"><a class="nav-link" href="charts.html">
+		<li class="nav-item"><a class="nav-link" href="adminmain/inquire">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 					fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd"

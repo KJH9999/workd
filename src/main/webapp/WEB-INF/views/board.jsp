@@ -28,18 +28,27 @@ section.notice {
 }
 
 #board-search {
-	position: relative;	
+	position: relative;
 }
 
 #board-search .search-window {
-	padding: 15px 0;
+	padding: 15px 10px;
 	background-color: #F9F7F9;
+	display: flex;
+	justify-content  : space-between;
+}
+
+#board-search .search-window>div:first-child{
+	flex : 0 0 300px;
+}
+
+#board-search .search-window>form:nth-child(2){
+	flex : 1 0 300px;
 }
 
 #board-search .search-window .search-wrap {
 	position: relative;
 	/*   padding-right: 124px; */
-	margin: 0 auto;
 	width: 80%;
 	max-width: 564px;
 }
@@ -204,16 +213,14 @@ section.notice {
 	width: 1px;
 	height: 1px;
 }
+
 .write-btn-wrapper {
-	position: absolute;
-	top: 15px;
-	bottom: 15px;
-	right: 15px;
+
 }
 
-.write-btn-wrapper > button {
+.write-btn-wrapper>button {
 	height: 100%;
-	border-radius : 5px;
+	border-radius: 5px;
 }
 </style>
 </head>
@@ -235,6 +242,7 @@ section.notice {
 		<div id="board-search">
 			<div class="container">
 				<div class="search-window">
+					<div></div>
 					<form action="">
 						<div class="search-wrap">
 							<label for="search" class="blind">공지사항 내용 검색</label> <input
@@ -243,17 +251,18 @@ section.notice {
 							<button type="submit" class="btn btn-dark">검색</button>
 						</div>
 					</form>
+					<%
+						if (s_email != null) {
+					%>
+					<form action="boardWrite" class="write-btn-wrapper">
+						<button type="submit" class="btn btn-dark">글쓰기</button>
+					</form>
+					<%
+						}
+					%>
 				</div>
 			</div>
-			<%
-				if (s_email != null) {
-			%>
-			<form action="boardWrite" class="write-btn-wrapper">
-				<button type="submit" class="btn btn-dark">글쓰기</button>
-			</form>
-			<%
-				}
-			%>
+
 		</div>
 		<!-- board list area -->
 		<div id="board-list">

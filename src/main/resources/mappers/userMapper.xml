@@ -8,7 +8,6 @@
 		FROM user
 	</select>
 
-	<!-- 가입  -->
 	<insert id="insertBoard">
 		INSERT INTO user(email, pw, name,number,gender,birth_date)
 		VALUES(#{email}, #{pw}, #{name},#{number},#{gender},#{birth_date})
@@ -45,4 +44,9 @@
 		SET name = #{name}, number = #{num}
 		WHERE email = #{email}
 	</update>
+	
+	<select id="emailChk" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM user
+		WHERE email = #{email}
+	</select>
 </mapper>

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -104,6 +105,20 @@ public class UserController {
 		rankingService.insert(model);
 		registService.insert(model);
 		return "home";
+	}
+	
+	@RequestMapping(value = "emailCk1", method = { RequestMethod.GET })
+    public String ex01(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+        System.out.println("ckck");
+		return "emailCk_beta";
+	}
+	
+	@RequestMapping(value = "emailCk", method = { RequestMethod.GET })
+	@ResponseBody 
+	public int idcheck(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String email) {
+	    int result = userService.emailChk(req.getParameter("email"));
+	    System.out.println(result);
+	    return result; 
 	}
 
 	@RequestMapping("inquire")

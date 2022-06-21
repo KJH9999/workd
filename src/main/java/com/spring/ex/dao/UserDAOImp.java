@@ -92,6 +92,13 @@ public class UserDAOImp implements UserDAO {
 		sqlSession.update("user.updateOther", map);		
 	}
 
+	@Override
+	public int emailChk(String email) {
+		int result = sqlSession.selectOne("user.emailChk", email);
+		System.out.println("D" + sqlSession.selectOne("user.emailChk", email));
+		return result;
+	}
+
 
 
 

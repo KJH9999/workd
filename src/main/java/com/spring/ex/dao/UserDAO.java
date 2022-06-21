@@ -14,5 +14,6 @@ public interface UserDAO {
 	public List<UserDTO> findname(String email);
 	public void updatePw(String email, String pw);
 	public void updateOther(String email, String name, String num);
+	public int emailChk(String email);
 
 }

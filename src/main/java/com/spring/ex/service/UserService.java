@@ -23,6 +23,8 @@ public interface UserService {
 	public void updatePw(Model model);
 	//정보수정
 	public void updateOther(Model model);
+	//중복확인
+	public int emailChk(String parameter);
 	
 	
 	

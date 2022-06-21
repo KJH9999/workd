@@ -86,6 +86,13 @@ public class UserServiceImp implements UserService{
 		
 	}
 
+	@Override
+	public int emailChk(String email) {
+		System.out.println("S = " + email);
+		int result = userDAO.emailChk(email);
+		return result;
+	}
+
 
 		
 

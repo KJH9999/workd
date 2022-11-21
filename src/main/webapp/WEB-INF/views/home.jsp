@@ -20,10 +20,16 @@
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 	<main>
-	<div class="fixed"><a href="#header"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
-  <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
-</svg></a></div>
+	<div class="fixed">
+		<a href="#header"><svg xmlns="http://www.w3.org/2000/svg"
+				width="16" height="16" fill="currentColor"
+				class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+					d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+  <path fill-rule="evenodd"
+					d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+</svg></a>
+	</div>
 	<section id="ImageSlider" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#ImageSlider" data-slide-to="0" class="active"></li>
@@ -56,98 +62,14 @@
 		</article>
 	</section>
 	<section class="content-wrapper">
+
 		<article>
 			<div class="title">
-				<span>Event</span>
-				<div class="detail">
-					<span> <a href="event"> 전체보기 <img
-							src="${pageContext.request.contextPath}/image/icons/right-arrow.png">
-					</a>
-					</span>
-				</div>
-			</div>
-			<div class="event-wrapper">
-				<a href="#event1">
-					<div class="event-wrap">
-						<div class="event-content">
-							<div class="event-date">
-								<span>05/25(목) ~ 12/31(토)</span>
-							</div>
-							<div class="event-title">
-								<span>신나게 운동할래요!</span>
-							</div>
-							<div class="event-subTitle">
-								<span>회원님들만의 음악 플레이리스트를 틀어드려요!</span>
-							</div>
-							<div class="event-category">
-								<span>Music</span>
-							</div>
-						</div>
-						<div class="event-image">
-							<img
-								src="${pageContext.request.contextPath}/image/events/MusicStation.jpg" />
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="event-wrapper">
-				<a href="#event2">
-					<div class="event-wrap">
-						<div class="event-content">
-							<div class="event-date">
-								<span>05/03(화) ~ 12/31(토)</span>
-							</div>
-							<div class="event-title">
-								<span>야외에서<br />운동 할래요!
-								</span>
-							</div>
-							<div class="event-subTitle">
-								<span>지루한 실내운동말고 야외에서 운동해요.</span>
-							</div>
-							<div class="event-category">
-								<span>Exercise</span>
-							</div>
-						</div>
-						<div class="event-image">
-							<img
-								src="${pageContext.request.contextPath}/image/events/PlayGround.jpg" />
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="event-wrapper">
-				<a href="#event3">
-					<div class="event-wrap">
-						<div class="event-content">
-							<div class="event-date">
-								<span>04/13(수) ~ 10/03(월)</span>
-							</div>
-							<div class="event-title">
-								<span>식단 관리를 하고 싶어요!</span>
-							</div>
-							<div class="event-subTitle">
-								<span>식단 조절이 어려운 분들을 위해<br />하나하나 맞춰드려요.
-								</span>
-							</div>
-							<div class="event-category">
-								<span>Diet</span>
-							</div>
-						</div>
-						<div class="event-image">
-							<img
-								src="${pageContext.request.contextPath}/image/events/Food.jpg" />
-						</div>
-					</div>
-				</a>
-			</div>
-		</article>
-		<article>
-			<div class="title">
-				<span>PT 강사</span>
-				<div class="detail">
-					<span><a href="ptTeacher">전체보기 <img
+				<span>Personal Trainer</span>
+				<%-- <div class="detail">
+					<span><a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=no1bodyclass&logNo=220597699391"target="_blank">전체보기 <img
 							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
-				</div>
+				</div> --%>
 			</div>
 			<div class="pt-wrapper">
 				<div class="pt-wrap">
@@ -188,11 +110,76 @@
 				</div>
 			</div>
 		</article>
+
+		<article id="Event" >
+			<div class="title" name="Evnet">
+				<span >Event</span>
+				<div class="detail">
+					<span> <a href="event"> 전체보기 <img
+							src="${pageContext.request.contextPath}/image/icons/right-arrow.png">
+					</a>
+					</span>
+				</div>
+			</div>
+			<div class="event-wrapper">
+				<a>
+					<div class="event-wrap">
+						<div class="event-content">
+							<div class="event-date">
+								<span>05/25(목) ~ 12/31(토)</span>
+							</div>
+							<div class="event-title">
+								<span>신나게 운동할래요!</span>
+							</div>
+							<div class="event-subTitle">
+								<span>회원님들만의 음악 플레이리스트를 틀어드려요!</span>
+							</div>
+							<div class="event-category">
+								<span>Music</span>
+							</div>
+						</div>
+						<div class="event-image">
+							<img
+								src="${pageContext.request.contextPath}/image/events/MusicStation.jpg" />
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="event-wrapper">
+				<a>
+					<div class="event-wrap">
+						<div class="event-content">
+							<div class="event-date">
+								<span>04/13(수) ~ 10/03(월)</span>
+							</div>
+							<div class="event-title">
+								<span>식단 관리를 하고 싶어요!</span>
+							</div>
+							<div class="event-subTitle">
+								<span>식단 조절이 어려운 분들을 위해<br />하나하나 맞춰드려요.
+								</span>
+							</div>
+							<div class="event-category">
+								<span>Diet</span>
+							</div>
+						</div>
+						<div class="event-image">
+							<img
+								src="${pageContext.request.contextPath}/image/events/Food.jpg" />
+						</div>
+					</div>
+				</a>
+			</div>
+		</article>
+
 		<article>
 			<div class="title">
-				<span>Youtube 영상</span>
+				<span>Youtube 관련영상</span>
 				<div class="detail">
-					<span><a href="youtube"> 전체보기 <img
+					<span><a
+						href="https://www.youtube.com/channel/UCdtRAcd3L_UpV4tMXCw63NQ"
+						target="_blank"> 전체보기 <img
 							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
 
 				</div>
@@ -394,10 +381,7 @@
 		<article id="Schedule">
 			<div class="title">
 				<span>Schedule</span>
-				<div class="detail">
-					<span><a href="schedule">전체보기 <img
-							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
-				</div>
+				<div class="detail"></div>
 			</div>
 			<div class="calendar-wrapper">
 				<div class="calendar-wrap">
@@ -406,7 +390,13 @@
 				<div class="memo-wrapper">
 					<div class="memo-wrap">
 						<div class="title">
-							<span>2022년 06월 9일</span>
+							<%@ page import="java.time.LocalDate"%>
+							<%@ page import="java.time.format.DateTimeFormatter"%>
+							<%
+								LocalDate now = LocalDate.now();
+								DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+							%>
+							<span><%=now.format(formatter)%></span>
 						</div>
 						<div class="list">
 							<ul>
@@ -422,7 +412,9 @@
 			<div class="title">
 				<span>Map</span>
 				<div class="detail">
-					<span><a href="map">전체보기 <img
+					<span><a
+						href="https://map.naver.com/v5/search/%EA%B2%BD%EB%AF%BC%EB%8C%80%ED%95%99%EA%B5%90?c=14129677.3272502,4520244.4494029,14.57,0,0,0,dh"
+						target="_blank">전체보기 <img
 							src="${pageContext.request.contextPath}/image/icons/right-arrow.png"></a></span>
 				</div>
 			</div>

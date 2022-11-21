@@ -63,7 +63,7 @@ public class RegistServiceImp implements RegistService{
 	}
 
 	@Override
-	public List<RegistDTO> remainingday(String email) {
+	public List<RegistDTO> findregist(String email) {
 		return registDAO.remainingday(email);
 	}
 

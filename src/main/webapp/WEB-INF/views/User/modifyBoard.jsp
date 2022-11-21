@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="./common/common.jsp"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ include file="../common/common.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>게시판</title>
+<meta charset="utf-8">
+<title>Insert title here</title>
 <style>
 table {
 	border-collapse: collapse;
@@ -27,30 +27,17 @@ section.notice {
 	text-align: center;
 }
 
-#board-search {
-	position: relative;
-}
-
 #board-search .search-window {
-	padding: 15px 10px;
+	padding: 15px 0;
 	background-color: #F9F7F9;
-	display: flex;
-	justify-content: space-between;
-}
-
-#board-search .search-window>div:first-child {
-	flex: 0 0 300px;
-}
-
-#board-search .search-window>form:nth-child(2) {
-	flex: 1 0 300px;
 }
 
 #board-search .search-window .search-wrap {
 	position: relative;
 	/*   padding-right: 124px; */
+	margin: 0 auto;
 	width: 80%;
-	max-width: 564px;
+	max-width: 800px;
 }
 
 #board-search .search-window .search-wrap input {
@@ -213,19 +200,11 @@ section.notice {
 	width: 1px;
 	height: 1px;
 }
-
-.write-btn-wrapper {
-	
-}
-
-.write-btn-wrapper>button {
-	height: 100%;
-	border-radius: 5px;
-}
 </style>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+
 	<hr>
 	<%
 		Object s_email = session.getAttribute("email");
@@ -234,69 +213,39 @@ section.notice {
 	<section class="notice">
 		<div class="page-title">
 			<div class="container">
-				<h3>게시글</h3>
+				<h3>�Խñ�</h3>
 			</div>
 		</div>
 		<!-- board seach area -->
-		<div id="board-search">
-			<div class="container">
-				<div class="search-window">
-					<div></div>
-					<form action="search" method="get">
-						<div class="search-wrap">
-							<input id="title" name="title" placeholder="검색어를 입력해주세요.">
-
-							<input type="submit" value="검색" class="btn btn-dark">
-						</div>
-					</form>
-
-
-					<%
-						if (s_email != null) {
-					%>
-					<form action="boardWrite" class="write-btn-wrapper">
-						<button type="submit" class="btn btn-dark">글쓰기</button>
-					</form>
-					<%
-						}
-					%>
+		<c:forEach items="${boardlist}" var="boardlist">
+			<div id="board-search">
+				<div class="container">
+					<div class="search-window">
+						<form action=modifyBoardOk>
+							<div class="search-wrap">
+								<input type="hidden" name="idx" value="${boardlist.idx}">
+								<input type="hidden" name="email" value="<%=email%>">
+								<h4>
+									EMAIL(�ۼ���) :
+									<%=email%></h4>
+								<input type="hidden" name="email" value="<%=email%>"> <input
+									id="title" type="search" name="title" style="margin: 10"
+									value="${boardlist.title}">
+								<textarea id="content" name="content"
+									style="height: 350px; width: 800px; margin: 10; padding: 7px 14px">
+								${boardlist.content}
+							</textarea>
+							</div>
+							<div
+								style="display: inline-block; margin: 10px; padding-right: 130; float: right;">
+								<button type="submit" class="btn btn-dark">�����ϱ�</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
+		</c:forEach>
 
-		</div>
-		<!-- board list area -->
-		<div id="board-list">
-			<div class="container">
-				<table class="board-table">
-					<thead>
-						<tr>
-							<th scope="col" class="th-num">번호</th>
-							<th scope="col" class="th-title">제목</th>
-							<th scope="col" class="th-author">작성자</th>
-							<th scope="col" class="th-author">등록일</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${boardlist}" var="boardlist">
-							<tr>
-								<td>${boardlist.idx}</td>
-								<td><a href="contentView.do?idx=${boardlist.idx}">
-										${boardlist.title}</a></td>
-								<td>${boardlist.email}</td>
-								<td>${boardlist.at_time}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-				<form action="listPage">
-					<div
-						style="display: inline-block; margin: 10px; padding-right: 10; float: right;">
-						<input type="hidden" name="num" value="1">
-						<button type="submit" class="btn btn-dark">전체보기</button>
-					</div>
-				</form>
-			</div>
-		</div>
 	</section>
 </body>
 </html>

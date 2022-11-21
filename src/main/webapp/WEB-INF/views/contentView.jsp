@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel='stylesheet' type="text/css"
 	href="${pageContext.request.contextPath}/css/common/global.css" />
@@ -110,7 +110,8 @@
 					<div class="content">${boardlist.content}</div>
 
 				</div>
-				<form action="board" class="btn-wrapper">
+				<form action="listPage" class="btn-wrapper">
+					<input type="hidden" name="num" value="1">
 					<button type="submit" class="btn btn-dark" id="btn-list">목록</button>
 				</form>
 			</div>

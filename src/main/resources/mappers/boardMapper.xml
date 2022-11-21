@@ -6,27 +6,63 @@
 	<select id="boardlist" resultType="BoardDTO">
 		SELECT *
 		FROM board
+		ORDER BY
+		at_time DESC
 	</select>
-	
+
 	<insert id="insertBoard">
 		INSERT INTO board(email, title, content, hit)
 		VALUES(#{email}, #{title}, #{content},0)
 	</insert>
-	
+
 	<update id="increaseView">
 		UPDATE board set hit = hit + 1
 		WHERE idx = #{idx}
 	</update>
-	
-	<select id = "read" resultType="BoardDTO">
+
+	<select id="read" resultType="BoardDTO">
 		SELECT *
 		FROM board
-		WHERE idx = #{idx}
+		WHERE idx =
+		#{idx}
 	</select>
-	
-	<delete id = "delete">
-		DELETE FROM board 
+
+	<delete id="delete">
+		DELETE FROM board
 		WHERE idx = #{idx}
 	</delete>
-	
+
+	<select id="myboardlist" resultType="BoardDTO">
+		SELECT *
+		FROM board
+		WHERE
+		email = #{email}
+	</select>
+
+	<update id="modify">
+		update board
+		set content = #{content},title = #{title}
+		where idx = #{idx}
+	</update>
+
+	<select id="count" resultType="int">
+		select count(idx) from board
+	</select>
+
+
+	<select id="listPage" parameterType="hashMap"
+		resultType="BoardDTO">
+		select *
+		from board
+		order by at_time desc
+		limit
+		#{displayPost}, #{postNum}
+	</select>
+
+	<select id="search" parameterType="hashMap"
+		resultType="BoardDTO">
+		select *
+		from board
+		where title like concat('%', #{title}, '%')
+	</select>
 </mapper>

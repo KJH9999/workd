@@ -15,5 +15,6 @@ public interface UserDAO {
 	public void updatePw(String email, String pw);
 	public void updateOther(String email, String name, String num);
 	public int emailChk(String email);
+	public void modifyUser(String email, String name, String number, String pw);
 
 }

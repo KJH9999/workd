@@ -25,6 +25,8 @@ public interface UserService {
 	public void updateOther(Model model);
 	//중복확인
 	public int emailChk(String parameter);
+	//개인정보 수정
+	public void modifyUser(Model model);
 	
 	
 	

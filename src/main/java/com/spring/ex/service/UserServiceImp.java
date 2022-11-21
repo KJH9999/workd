@@ -93,6 +93,18 @@ public class UserServiceImp implements UserService{
 		return result;
 	}
 
+	@Override
+	public void modifyUser(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		String email = request.getParameter("email");
+		String name = request.getParameter("name");
+		String pw = request.getParameter("pw");
+		String number = request.getParameter("number");
+		System.out.println(email+name+number+pw+"SER");
+		userDAO.modifyUser(email,name,number,pw);
+	}
+
 
 		
 

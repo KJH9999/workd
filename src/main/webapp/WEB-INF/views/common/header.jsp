@@ -20,17 +20,6 @@
 				</div>
 			</div>
 			<div class="menu">
-				<div class="dropdown-wrapper">
-					<div class="dropdown">
-						<span class="text"> 커뮤니티 </span>
-						<ul class="list">
-							<li><a href="board">게시판</a></li>
-							<li>이벤트</li>
-						</ul>
-					</div>
-					<div class="dropdown">
-						<span class="text"> 이용안내 </span>
-						<ul class="list">
 							<%
 								String url = request.getRequestURI();
 								String regEx = "ex/(.+)";
@@ -39,8 +28,19 @@
 								System.out.println(match.groupCount());
 								if(match.groupCount() > 0) {
 							%>
-							<li><a href="#Schedule">시간표</a></li>
-							<li><a href="#Map">위치</a></li>
+				<div class="dropdown-wrapper">
+					<div class="dropdown">
+						<span class="text"> 커뮤니티 </span>
+						<ul class="list">
+							<li><a href="listPage?num=1">게시판</a></li>
+							<li><a href="/ex#Event">이벤트</a></li>
+						</ul>
+					</div>
+					<div class="dropdown">
+						<span class="text"> 이용안내 </span>
+						<ul class="list">
+							<li><a href="/ex#Schedule">시간표</a></li>
+							<li><a href="/ex#Map">위치</a></li>
 							<%
 								} else {
 							%>
@@ -49,7 +49,7 @@
 							<%
 								}
 							%>
-							<li>내부 시설</li>
+							<li><a href="https://m.blog.naver.com/no1bodyclass/220607797937"target="_blank">내부시설</a></li>
 						</ul>
 					</div>
 				</div>
@@ -70,18 +70,16 @@
 											parsedEmail = m.group(1);
 										
 							%>
-							<%= parsedEmail %>
+							<%= parsedEmail+" 님" %>
 							<%
 										}
 							%>
 							</span>
 							<ul class="list">
-								<li>내 정보</li>
+								<li><a href="myinformation?email=<%=email%>">내 정보</a></li>
 								<li><a href="regist">등록하기</a></li>
 								<li>
-									<a href="inquire?email=<%=email%>">
-										문의하기
-									</a>
+									<a href="inquire?email=<%=email%>">문의하기</a>
 								</li>
 								<li>
 									<a href="logout">로그아웃</a>

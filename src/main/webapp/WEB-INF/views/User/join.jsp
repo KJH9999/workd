@@ -23,11 +23,13 @@
 				<!-- ID -->
 				<div>
 					<h3 class="join_title">
-						<label for="id">아이디</label>
+						<label for="id">Email</label>
 					</h3>
-					<span class="box int_id"> <input type="text" id="id" name="email"
-						class="int" maxlength="20"> <span class="step_url"></span>
+					<span class="box int_id"> <input type="text" id="email" name="email"
+						class="int" maxlength="20"> <!-- <span class="step_url"></span>
 					</span> <span class="error_next_box"></span>
+					 </br><input type="button" id="btnCheck" value="중복확인">
+					<span id="result">&nbsp;&nbsp;&nbsp;중복확인을 해주세요</span> -->
 				</div>
 
 				<!-- PW1 -->
@@ -152,5 +154,34 @@
 		<script type="text/javascript"
 			src="${pageContext.request.contextPath}/js/pages/join.js"></script>
 	</form>
+	
+		<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script>
+		$('#btnCheck').click(function() {
+			if ($('#email').val() != '') {
+				// 아이디를 서버로 전송 > DB 유효성 검사 > 결과 반환받기
+				$.ajax({
+					type : 'GET',
+					url : 'http://localhost:8181/ex/emailCk?email='+$('#email').val(),
+					success : function(result) {
+						if (result=='1') {
+							alert('이미 사용중인 아이디입니다.');
+							$('#result').text('이미 사용중인 아이디입니다.');
+						} else {
+							alert('사용 가능한 아이디입니다.');
+							$('#result').text('사용 가능한 아이디입니다.');
+						}
+					},
+					error : function(a, b, c) {
+						console.log(a, b, c);
+					}
+				});
+			} else {
+				alert('email을 입력하세요.');
+				$('#email').focus();
+			}
+		});
+	</script>
 </body>
 </html>

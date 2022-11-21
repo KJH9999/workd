@@ -18,5 +18,12 @@ public interface BoardDAO {
 	public List<BoardDTO> read(int idx);
 	//게시글삭제
 	public void delete(int idx);
-	
+	public List<BoardDTO> findboard(String email);
+	public void delete(String idx);
+	//게시글수정
+	public void modifyBoard(String idx,String title,String content);
+	public int count();
+	public List<BoardDTO> listPage(int displayPost, int postNum);
+	//검색
+	public List<BoardDTO> search(String title);
 }

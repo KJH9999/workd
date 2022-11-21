@@ -9,30 +9,35 @@
 	</select>
 
 	<insert id="insertBoard">
-		INSERT INTO user(email, pw, name,number,gender,birth_date)
-		VALUES(#{email}, #{pw}, #{name},#{number},#{gender},#{birth_date})
+		INSERT INTO user(email, pw,
+		name,number,gender,birth_date)
+		VALUES(#{email}, #{pw},
+		#{name},#{number},#{gender},#{birth_date})
 	</insert>
-	
 
-	<select id="login" resultType= "int">
+
+	<select id="login" resultType="int">
 		SELECT COUNT(*)
 		FROM user
-		WHERE email = #{email} AND pw = #{pw}
+		WHERE
+		email = #{email} AND pw = #{pw}
 	</select>
-	
-	
-	<select id="forlogin" resultType= "int">
+
+
+	<select id="forlogin" resultType="int">
 		SELECT COUNT(*)
 		FROM user
-		WHERE email = "1"
+		WHERE
+		email = "1"
 	</select>
-	
+
 	<select id="findname" resultType="UserDTO">
 		SELECT *
 		FROM user
-		WHERE email = #{email}
+		WHERE email =
+		#{email}
 	</select>
-	
+
 	<update id="updatePw">
 		UPDATE user
 		SET pw = #{pw}
@@ -42,11 +47,20 @@
 	<update id="updateOther">
 		UPDATE user
 		SET name = #{name}, number = #{num}
-		WHERE email = #{email}
+		WHERE
+		email = #{email}
 	</update>
-	
+
 	<select id="emailChk" parameterType="String" resultType="int">
-		SELECT COUNT(*) FROM user
+		SELECT
+		COUNT(*) FROM user
 		WHERE email = #{email}
 	</select>
+
+	<update id="modifyUser">
+		UPDATE user
+		SET name = #{name}, number = #{number}, pw = #{pw}
+		WHERE
+		email = #{email}
+	</update>
 </mapper>

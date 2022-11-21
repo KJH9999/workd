@@ -56,5 +56,43 @@ public class BoardServiceImp implements BoardService{
 		boardDAO.delete(idx);
 	}
 
+	@Override
+	public List<BoardDTO> findboard(String email) {
+		return boardDAO.findboard(email);
+	}
+
+	@Override
+	public void delete(String idx) {
+		boardDAO.delete(idx);		
+	}
+
+	@Override
+	public void modifyBoard(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		
+		String idx = request.getParameter("idx");
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		
+		boardDAO.modifyBoard(idx,title,content);
+		
+	}
+	
+	@Override
+	public int count() throws Exception {
+		return boardDAO.count();
+	}
+
+	@Override
+	public List<BoardDTO> listPage(int displayPost, int postNum) throws Exception {
+		 return boardDAO.listPage(displayPost, postNum);
+	}
+
+	@Override
+	public List<BoardDTO> search(String title) {
+		return boardDAO.search(title);
+	}
+
 
 }

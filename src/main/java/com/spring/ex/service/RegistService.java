@@ -20,7 +20,7 @@ public interface RegistService {
 	//만료일
 	public void end(Model model);
 	//남은일수
-	public List<RegistDTO> remainingday(String email);
+	public List<RegistDTO> findregist(String email);
 	
 	
 }

@@ -22,5 +22,16 @@ public interface BoardService {
 	void increaseViewcnt(int idx);
 	//게시글 삭제
 	public void delete(int idx);
+	public void delete(String idx);
+	public List<BoardDTO> findboard(String email);
+	//수정하기
+	public void modifyBoard(Model model);
+	//페이징
+	public int count() throws Exception; 
+	public List<BoardDTO> listPage(int displayPost, int postNum) throws Exception;
+	//검색
+	public List<BoardDTO> search(String title);
+
+
 
 }

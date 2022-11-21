@@ -242,15 +242,13 @@ section.notice {
 			<div class="container">
 				<div class="search-window">
 					<div></div>
-					<form action="search" method="get">
+					<form action="search">
 						<div class="search-wrap">
-							<input id="title" name="title" placeholder="검색어를 입력해주세요.">
-
-							<input type="submit" value="검색" class="btn btn-dark">
+							<label for="search" class="blind">공지사항 내용 검색</label> <input
+								id="title" type="search" name="title" placeholder="검색어를 입력해주세요.">
+							<button type="submit" class="btn btn-dark">검색</button>
 						</div>
 					</form>
-
-
 					<%
 						if (s_email != null) {
 					%>
@@ -288,13 +286,14 @@ section.notice {
 						</c:forEach>
 					</tbody>
 				</table>
-				<form action="listPage">
-					<div
-						style="display: inline-block; margin: 10px; padding-right: 10; float: right;">
-						<input type="hidden" name="num" value="1">
-						<button type="submit" class="btn btn-dark">전체보기</button>
-					</div>
-				</form>
+
+				<div style="text-align: center">
+					<c:forEach begin="1" end="${pageNum}" var="num">
+						<span> <a href="listPage?num=${num}">${num}</a>
+						</span>
+					</c:forEach>
+				</div>
+
 			</div>
 		</div>
 	</section>

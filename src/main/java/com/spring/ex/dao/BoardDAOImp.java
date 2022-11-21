@@ -53,6 +53,52 @@ public class BoardDAOImp implements BoardDAO{
 		sqlSession.delete("board.delete", idx);
 	}
 
+	@Override
+	public List<BoardDTO> findboard(String email) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		return sqlSession.selectList("board.myboardlist",map);
+	}
+
+	@Override
+	public void delete(String idx) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("idx", idx);
+		sqlSession.delete("board.delete", idx);
+		
+	}
+
+	@Override
+	public void modifyBoard(String idx,String title, String content) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("idx", idx);
+		map.put("title", title);
+		map.put("content", content);
+		sqlSession.update("board.modify", map);
+	}
+
+	@Override
+	public int count() {
+		return sqlSession.selectOne("board.count");
+	}
+
+	@Override
+	public List<BoardDTO> listPage(int displayPost, int postNum) {
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		  
+		map.put("displayPost", displayPost);
+		map.put("postNum", postNum);
+		  
+		 return sqlSession.selectList("board.listPage", map);
+	}
+
+	@Override
+	public List<BoardDTO> search(String title) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("title", title);
+		
+		return sqlSession.selectList("board.search", map);
+	}
 
 
 }

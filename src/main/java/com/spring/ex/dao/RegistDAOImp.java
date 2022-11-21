@@ -53,8 +53,7 @@ public class RegistDAOImp implements RegistDAO{
 	public List<RegistDTO> remainingday(String email) {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
-		
-		return sqlSession.selectList("regist.remainingday");
+		return sqlSession.selectList("regist.remainingday",map);
 	}
 
 }

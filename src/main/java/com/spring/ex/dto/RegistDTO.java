@@ -3,7 +3,7 @@ package com.spring.ex.dto;
 public class RegistDTO {
 	private String email;
 	private String name;
-	private int select;
+	private int slct;
 	private int pay;
 	private String registday;
 	private String expiration;
@@ -20,11 +20,11 @@ public class RegistDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getSelect() {
-		return select;
+	public int getslct() {
+		return slct;
 	}
-	public void setSelect(int select) {
-		this.select = select;
+	public void setslct(int slct) {
+		this.slct = slct;
 	}
 	public int getPay() {
 		return pay;
@@ -47,7 +47,7 @@ public class RegistDTO {
 	
 	@Override
 	public String toString() {
-		return "RegistDTO [email=" + email + ", name=" + name + ", select=" + select + ", pay=" + pay + ", registday="
+		return "RegistDTO [email=" + email + ", name=" + name + ", slct=" + slct + ", pay=" + pay + ", registday="
 				+ registday + ", expiration=" + expiration + "]";
 	}
 

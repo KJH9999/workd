@@ -99,6 +99,16 @@ public class UserDAOImp implements UserDAO {
 		return result;
 	}
 
+	@Override
+	public void modifyUser(String email, String name, String number, String pw) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("email", email);		
+		map.put("name", name);		
+		map.put("number", number);	
+		map.put("pw", pw);	
+		sqlSession.update("user.modifyUser", map);		
+	}
+
 
 
 
